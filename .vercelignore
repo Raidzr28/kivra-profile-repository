@@ -1,0 +1,28 @@
+# Hanya berkas yang benar-benar dipakai situs yang diunggah ke Vercel.
+# Tanpa ini, `vercel deploy` ikut mengunggah node_modules Remotion (747 MB).
+
+# Sumber video: dipakai untuk merender mp4, bukan untuk disajikan
+remotion-intro/
+
+# Laporan analisis kode
+graphify-out/
+
+# Dokumentasi kerja
+docs/
+CLAUDE.md
+CATATAN-LANJUTAN.md
+
+# Cadangan bertanda waktu
+*.bak
+*.bak-*
+
+# Aset yang tidak dirujuk halaman mana pun
+foto portofolio/Hero/hero social media/
+foto portofolio/web porto/WhatsApp*
+foto portofolio/web porto/Salinan*
+Logo-kivra-transparent.png
+Logo.png
+
+# Berkas sistem macOS
+.DS_Store
+**/.DS_Store

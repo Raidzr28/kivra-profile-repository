@@ -1,0 +1,63 @@
+# ---------------------------------------------------------------------------
+# Dependensi
+# node_modules Remotion berukuran 747 MB. Ini WAJIB diabaikan: GitHub menolak
+# berkas di atas 100 MB, dan repo akan jadi sangat lambat. Pasang ulang dengan
+# `npm install` di dalam folder remotion-intro.
+# ---------------------------------------------------------------------------
+node_modules/
+
+# ---------------------------------------------------------------------------
+# Vercel
+# .vercel menyimpan kaitan folder ini ke project Vercel (ID project dan org).
+# Spesifik per mesin, dibuat ulang otomatis oleh `vercel link`.
+# ---------------------------------------------------------------------------
+.vercel/
+
+# ---------------------------------------------------------------------------
+# Cadangan bertanda waktu
+# Dibuat sebelum penyuntingan besar. Riwayat Git sudah menggantikan fungsinya.
+# ---------------------------------------------------------------------------
+*.bak
+*.bak-*
+
+# ---------------------------------------------------------------------------
+# Keluaran yang dihasilkan ulang
+# graphify-out adalah laporan analisis kode, bukan sumber.
+# ---------------------------------------------------------------------------
+graphify-out/
+
+# ---------------------------------------------------------------------------
+# Aset tidak terpakai yang memuat data pribadi
+# Berkas asli WhatsApp di folder ini tidak dirujuk halaman mana pun, dan salah
+# satunya menampilkan alamat email pribadi. Versi yang dipakai situs sudah
+# tersimpan sebagai shana-01..06.jpg dan tetap ikut ter-commit.
+# ---------------------------------------------------------------------------
+foto portofolio/web porto/WhatsApp*
+foto portofolio/web porto/Salinan*
+
+# ---------------------------------------------------------------------------
+# Rahasia — jangan pernah ter-commit
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ---------------------------------------------------------------------------
+# Berkas sistem & editor
+# ---------------------------------------------------------------------------
+.DS_Store
+**/.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+
+# ---------------------------------------------------------------------------
+# Log
+# ---------------------------------------------------------------------------
+npm-debug.log*
+yarn-error.log*
+*.log

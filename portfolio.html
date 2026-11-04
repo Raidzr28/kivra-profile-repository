@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Jelajahi portofolio website development, UI/UX design, dan endorsement KIVRA Digital."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Portofolio — KIVRA Digital</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="portfolio-page">
+    <div class="scroll-rail" aria-hidden="true"><span></span></div>
+    <div class="pf-indicator" aria-hidden="true">
+      <span class="pf-indicator-num">01</span>
+      <i></i>
+      <span class="pf-indicator-label">Social media</span>
+    </div>
+    <div class="loading-screen" id="loading-screen" role="dialog" aria-modal="true" aria-label="Intro KIVRA" hidden>
+      <video
+        class="loading-screen-video"
+        data-desktop-src="loading%20screen/kivra-intro-web.mp4"
+        data-mobile-src="loading%20screen/kivra-intro-mobile.mp4"
+        muted
+        playsinline
+        preload="auto"
+        aria-hidden="true"
+      ></video>
+      <button class="loading-screen-skip" type="button">Lewati intro <span aria-hidden="true">↗</span></button>
+    </div>
+    <header class="site-header portfolio-header">
+      <a class="brand" href="tes.html#beranda" aria-label="KIVRA, ke beranda">
+        <span class="brand-logo-frame">
+          <img class="brand-logo" src="Logo-kivra.png" alt="KIVRA Digital — Create. Connect. Grow." />
+        </span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navigasi utama">
+        <a href="#social-media">Social</a>
+        <a href="#creative-content">Content</a>
+        <a href="#talent-kol">Talent</a>
+        <a href="#web-uiux">Web</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Buka menu">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <a class="header-cta" href="order.html">
+        Mulai proyek
+        <span aria-hidden="true">↗</span>
+      </a>
+    </header>
+
+    <main>
+      <section class="portfolio-hero section-wrap">
+        <p class="eyebrow section-label" data-reveal>KIVRA® / Pilihan karya</p>
+        <div class="portfolio-hero-content">
+          <h1 data-reveal="up" style="--reveal-delay: .06s">Ide yang jadi <span>impact.</span></h1>
+          <div class="portfolio-hero-aside" data-reveal style="--reveal-delay: .14s">
+            <p>
+              Lihat hasil karya KIVRA dari segmen social media management,
+              creative content, talent kreatif, dan brand campaign.
+            </p>
+            <div class="portfolio-jump-links">
+              <a class="portfolio-home-link" href="tes.html#beranda"><span aria-hidden="true">←</span> Kembali ke beranda</a>
+              <a href="#social-media">Social media <span aria-hidden="true">↓</span></a>
+              <a href="#creative-content">Creative content <span aria-hidden="true">↓</span></a>
+              <a href="#talent-kol">Talent &amp; KOL <span aria-hidden="true">↓</span></a>
+              <a href="#web-uiux">Web &amp; UI/UX <span aria-hidden="true">↓</span></a>
+            </div>
+          </div>
+        </div>
+        <span class="portfolio-count" data-reveal style="--reveal-delay: .2s">04 SEGMEN <span aria-hidden="true">/</span> 19 KARYA</span>
+      </section>
+
+      <section class="portfolio-segment section-wrap" id="social-media">
+        <div class="portfolio-section-heading" data-reveal="up">
+          <div>
+            <p class="eyebrow section-label">01 / Social media management</p>
+            <h2 data-split>Konten yang membangun <span>koneksi.</span></h2>
+          </div>
+          <p>Pengelolaan akun, visual, dan konten untuk beragam kebutuhan brand.</p>
+        </div>
+        <div class="portfolio-grid social-portfolio-grid dim-siblings">
+          <article class="portfolio-card social-portfolio-card dim-item" data-reveal="card" style="--index: 0; --reveal-delay: 0.00s">
+            <figure class="portfolio-image social-portfolio-image">
+              <img
+                src="./foto%20portofolio/Social%20media/HNI%20sentul.png"
+                alt="Portofolio konten media sosial Business Center Sentul HNI"
+                loading="lazy"
+              />
+            </figure>
+            <div class="portfolio-card-caption">
+              <div><h3>Business Center Sentul HNI</h3><p>Social media management</p></div>
+              <span aria-hidden="true">↗</span>
+            </div>
+          </article>
+          <article class="portfolio-card social-portfolio-card dim-item" data-reveal="card" style="--index: 1; --reveal-delay: 0.09s">
+            <figure class="portfolio-image social-portfolio-image">
+              <img
+                src="./foto%20portofolio/Social%20media/buihkicks.png"
+                alt="Portofolio akun media sosial dan konten BuihKicks"
+                loading="lazy"
+              />
+            </figure>
+            <div class="portfolio-card-caption">
+              <div><h3>BuihKicks</h3><p>Social media management</p></div>
+              <span aria-hidden="true">↗</span>
+            </div>
+          </article>
+          <article class="portfolio-card social-portfolio-card dim-item" data-reveal="card" style="--index: 2; --reveal-delay: 0.18s">
+            <figure class="portfolio-image social-portfolio-image">
+              <img
+                src="./foto%20portofolio/Social%20media/Alin.png"
+                alt="Portofolio media sosial untuk kreator Alin Nur Jannah"
+                loading="lazy"
+              />
+            </figure>
+            <div class="portfolio-card-caption">
+              <div><h3>Alin Nur Jannah</h3><p>Social media &amp; content</p></div>
+              <span aria-hidden="true">↗</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="portfolio-segment content-portfolio-section section-wrap" id="creative-content">
+        <div class="portfolio-section-heading" data-reveal="up">
+          <div>
+            <p class="eyebrow section-label">02 / Creative content production</p>
+            <h2 data-split>Konten kreatif yang <span>bercerita.</span></h2>
+          </div>
+          <p>Produksi visual dan materi kreatif untuk menyampaikan pesan dengan lebih berkesan.</p>
+        </div>
+        <div class="portfolio-grid content-portfolio-grid dim-siblings">
+          <article class="portfolio-card content-portfolio-card dim-item" data-reveal="card" style="--index: 0; --reveal-delay: 0.00s">
+            <figure class="portfolio-image content-portfolio-image">
+              <img
+                src="./foto%20portofolio/Content%20Creative/one.jpg"
+                alt="Konten kreatif bertema inspirasi dan produktivitas"
+                loading="lazy"
+              />
+            </figure>
+            <div class="portfolio-card-caption">
+              <div><h3>Build · Create · Inspire</h3><p>Creative content · Campaign visual</p></div>
+              <span aria-hidden="true">↗</span>
+            </div>
+          </article>
+          <article class="portfolio-card content-portfolio-card dim-item" data-reveal="card" style="--index: 1; --reveal-delay: 0.09s">
+            <figure class="portfolio-image content-portfolio-image">
+              <img
+                src="./foto%20portofolio/Content%20Creative/two.jpg"
+                alt="Konten kreatif profil talent dan campaign"
+                loading="lazy"
+              />
+            </figure>
+            <div class="portfolio-card-caption">
+              <div><h3>Creative talent profile</h3><p>Creative content · Talent campaign</p></div>
+              <span aria-hidden="true">↗</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="portfolio-segment talent-portfolio-section section-wrap" id="talent-kol">
+        <div class="portfolio-section-heading" data-reveal="up">
+          <div>
+            <p class="eyebrow section-label">03 / Talent &amp; KOL management</p>
+            <h2 data-split>Wajah kreatif untuk <span>cerita brand.</span></h2>
+          </div>
+          <p>Talent kreatif untuk mendukung konten, komunikasi, dan campaign brand.</p>
+        </div>
+        <div class="portfolio-grid talent-portfolio-grid dim-siblings">
+          <article class="portfolio-card talent-portfolio-card dim-item" data-reveal="card" style="--index: 0; --reveal-delay: 0.00s">
+            <figure class="portfolio-image talent-portfolio-image">
+              <img
+                src="./foto%20portofolio/talent%20kreatif/Five.jpeg"
+                alt="Potret Alin Nur di luar ruangan, talent kreatif KIVRA"
+                loading="lazy"
+              />
+            </figure>
+            <div class="portfolio-card-caption">
+              <div><h3>Alin Nur</h3><p>Talent portfolio · Foto terbaru</p></div>
+              <span aria-hidden="true">↗</span>
+            </div>
+          </article>
+          <article class="portfolio-card talent-portfolio-card dim-item" data-reveal="card" style="--index: 1; --reveal-delay: 0.09s">
+            <figure class="portfolio-image talent-portfolio-image">
+              <img
+                src="./foto%20portofolio/talent%20kreatif/six.jpeg"
+                alt="Potret Alin Nur, talent kreatif KIVRA"
+                loading="lazy"
+              />
+            </figure>
+            <div class="portfolio-card-caption">
+              <div><h3>Alin Nur</h3><p>Talent portfolio · Foto terbaru</p></div>
+              <span aria-hidden="true">↗</span>
+            </div>
+          </article>
+          <article class="portfolio-card talent-portfolio-card dim-item" data-reveal="card" style="--index: 2; --reveal-delay: 0.18s">
+            <figure class="portfolio-image talent-portfolio-image">
+              <img
+                src="./foto%20portofolio/talent%20kreatif/seven.jpeg"
+                alt="Potret Alin Nur di dalam studio, talent kreatif KIVRA"
+                loading="lazy"
+              />
+            </figure>
+            <div class="portfolio-card-caption">
+              <div><h3>Alin Nur</h3><p>Talent portfolio · Foto terbaru</p></div>
+              <span aria-hidden="true">↗</span>
+            </div>
+          </article>
+          <article class="portfolio-card talent-portfolio-card preserved-talent-photo dim-item" data-reveal="card" style="--index: 3; --reveal-delay: 0.27s">
+            <figure class="portfolio-image talent-portfolio-image">
+              <img
+                src="./foto%20portofolio/talent%20kreatif/four.jpeg"
+                alt="Potret Alin Nur dengan rangkaian bunga, talent kreatif KIVRA"
+                loading="lazy"
+              />
+            </figure>
+            <div class="portfolio-card-caption">
+              <div><h3>Alin Nur</h3><p>Talent portfolio · Foto pilihan</p></div>
+              <span aria-hidden="true">↗</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="portfolio-segment brand-portfolio-section section-wrap" id="web-uiux">
+        <div class="portfolio-section-heading" data-reveal="up">
+          <div>
+            <p class="eyebrow section-label">04 / Web &amp; UI/UX</p>
+            <h2 data-split>Produk digital yang <span>dipakai setiap hari.</span></h2>
+          </div>
+          <p>Website dan aplikasi yang kami bangun dari alur pengguna sampai tampilan akhirnya.</p>
+        </div>
+        <div class="portfolio-grid brand-portfolio-grid dim-siblings" data-cursor="Web &amp; UI/UX">
+          <article class="portfolio-card brand-portfolio-card dim-item" data-reveal="card" style="--index: 0; --reveal-delay: 0.00s">
+            <figure class="portfolio-image brand-portfolio-image is-portrait" data-parallax="0.08">
+              <img
+                src="foto%20portofolio/web%20porto/shana-01-paket.jpg"
+                alt="Layar pilih paket aplikasi Shana Studio berisi daftar paket makeup beserta durasi dan harga"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+            <div class="portfolio-card-caption">
+              <div><h3>Shana Studio</h3><p>Pilih paket · Web app · Alur pemesanan</p></div>
+              <span aria-hidden="true">↗</span>
+            </div>
+          </article>
+          <article class="portfolio-card brand-portfolio-card dim-item" data-reveal="card" style="--index: 1; --reveal-delay: 0.07s">
+            <figure class="portfolio-image brand-portfolio-image is-portrait" data-parallax="0.08">
+              <img
+                src="foto%20portofolio/web%20porto/shana-02-addon.jpg"
+                alt="Layar add-on Shana Studio: bulu mata satuan, tata rambut, touch-up standby, dan paket keluarga"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+            <div class="portfolio-card-caption">
+              <div><h3>Shana Studio</h3><p>Add-on · Web app · Alur pemesanan</p></div>
+              <span aria-hidden="true">↗</span>
+            </div>
+          </article>
+          <article class="portfolio-card brand-portfolio-card dim-item" data-reveal="card" style="--index: 2; --reveal-delay: 0.14s">
+            <figure class="portfolio-image brand-portfolio-image is-portrait" data-parallax="0.08">
+              <img
+                src="foto%20portofolio/web%20porto/shana-03-jadwal.jpg"
+                alt="Layar pemilihan tanggal, jam mulai, dan lokasi acara pada aplikasi Shana Studio"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+            <div class="portfolio-card-caption">
+              <div><h3>Shana Studio</h3><p>Jadwal & lokasi · Web app · Alur pemesanan</p></div>
+              <span aria-hidden="true">↗</span>
+            </div>
+          </article>
+          <article class="portfolio-card brand-portfolio-card dim-item" data-reveal="card" style="--index: 3; --reveal-delay: 0.21s">
+            <figure class="portfolio-image brand-portfolio-image is-portrait" data-parallax="0.08">
+              <img
+                src="foto%20portofolio/web%20porto/shana-04-ringkasan.jpg"
+                alt="Layar ringkasan pesanan Shana Studio dengan rincian biaya, total, dan deposit"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+            <div class="portfolio-card-caption">
+              <div><h3>Shana Studio</h3><p>Ringkasan pesanan · Web app · Checkout</p></div>
+              <span aria-hidden="true">↗</span>
+            </div>
+          </article>
+          <article class="portfolio-card brand-portfolio-card dim-item" data-reveal="card" style="--index: 4; --reveal-delay: 0.28s">
+            <figure class="portfolio-image brand-portfolio-image is-portrait" data-parallax="0.08">
+              <img
+                src="foto%20portofolio/web%20porto/shana-05-asisten.jpg"
+                alt="Layar asisten chat Shana Studio yang menjawab pertanyaan paket dan ketersediaan jadwal"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+            <div class="portfolio-card-caption">
+              <div><h3>Shana Studio</h3><p>Asisten chat · Web app · Fitur asisten</p></div>
+              <span aria-hidden="true">↗</span>
+            </div>
+          </article>
+          <article class="portfolio-card brand-portfolio-card dim-item" data-reveal="card" style="--index: 5; --reveal-delay: 0.35s">
+            <figure class="portfolio-image brand-portfolio-image is-portrait" data-parallax="0.08">
+              <img
+                src="foto%20portofolio/web%20porto/shana-06-looks.jpg"
+                alt="Layar feed Looks Shana Studio berisi unggahan tampilan dari studio dan kliennya"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+            <div class="portfolio-card-caption">
+              <div><h3>Shana Studio</h3><p>Looks feed · Web app · Konten komunitas</p></div>
+              <span aria-hidden="true">↗</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="portfolio-contact section-wrap" data-reveal="up">
+        <p class="eyebrow"><span class="status-dot"></span> Punya proyek berikutnya?</p>
+        <h2 data-split>Yuk, bikin karya<br /><span>bareng KIVRA.</span></h2>
+        <a class="contact-link" href="order.html">Pesan jasa KIVRA <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer section-wrap">
+      <a class="brand footer-brand" href="tes.html#beranda" aria-label="KIVRA, ke beranda">
+        <span class="brand-logo-frame">
+          <img class="brand-logo" src="Logo-kivra.png" alt="KIVRA Digital — Create. Connect. Grow." />
+        </span>
+      </a>
+      <p>Creative digital agency<br />Create. Connect. Grow.</p>
+      <div class="footer-links">
+        <a href="mailto:kivradigital.agency@gmail.com">Email admin</a>
+        <a href="tes.html#beranda">Kembali ke beranda ↑</a>
+      </div>
+      <span class="copyright">© 2026 Kivra Studio</span>
+    </footer>
+    <script>
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const loadingScreen = document.querySelector("#loading-screen");
+      const loadingVideo = loadingScreen.querySelector("video");
+      const skipLoadingScreen = loadingScreen.querySelector("button");
+      const isMobileViewport = window.matchMedia("(max-width: 620px)").matches;
+      const loadingVideoSources = isMobileViewport
+        ? [loadingVideo.dataset.mobileSrc, loadingVideo.dataset.desktopSrc]
+        : [loadingVideo.dataset.desktopSrc];
+      let loadingVideoSourceIndex = 0;
+      let loadingVideoPlaybackStarted = false;
+      let loadingScreenTimeout;
+
+      const dismissLoadingScreen = () => {
+        clearTimeout(loadingScreenTimeout);
+        loadingVideo.pause();
+        loadingScreen.classList.remove("is-visible");
+        window.setTimeout(() => {
+          loadingScreen.hidden = true;
+        }, 450);
+      };
+
+      if (!reducedMotion) {
+        loadingScreen.hidden = false;
+        loadingScreen.classList.add("is-visible");
+        loadingVideo.addEventListener("canplay", () => {
+          if (loadingVideoPlaybackStarted) return;
+          loadingVideoPlaybackStarted = true;
+          loadingVideo.play().then(() => skipLoadingScreen.focus()).catch(dismissLoadingScreen);
+        });
+        loadingVideo.addEventListener("ended", dismissLoadingScreen, { once: true });
+        loadingVideo.addEventListener("error", () => {
+          loadingVideoSourceIndex += 1;
+          const fallbackSource = loadingVideoSources[loadingVideoSourceIndex];
+          if (!fallbackSource) {
+            dismissLoadingScreen();
+            return;
+          }
+
+          loadingVideo.src = fallbackSource;
+          loadingVideo.load();
+        });
+        skipLoadingScreen.addEventListener("click", dismissLoadingScreen);
+        loadingScreenTimeout = window.setTimeout(dismissLoadingScreen, 15000);
+        loadingVideo.src = loadingVideoSources[loadingVideoSourceIndex];
+        loadingVideo.load();
+      }
+
+      /* =====================================================================
+         Portfolio motion — same contract as tes.html: one rAF-throttled
+         scroll listener driving every mechanism, reveals resolved from scroll
+         position rather than IntersectionObserver (a [data-reveal-media]
+         element at clip-path:inset(100%) reports zero intersection area, so
+         an observer on it can never fire).
+         ===================================================================== */
+
+      const scrollHandlers = [];
+      const clamp01 = (n) => (n < 0 ? 0 : n > 1 ? 1 : n);
+
+      if (!reducedMotion) document.documentElement.classList.add("motion-ready");
+
+      /* ---- reveal on enter ---- */
+      let revealQueue = [...document.querySelectorAll("[data-reveal], [data-reveal-media]")];
+
+      if (revealQueue.length) {
+        scrollHandlers.push(() => {
+          if (!revealQueue.length) return;
+          const limit = window.innerHeight * 0.9;
+          revealQueue = revealQueue.filter((el) => {
+            const box = el.getBoundingClientRect();
+            if (box.top >= limit || box.bottom <= 0) return true;
+            el.classList.add("is-revealed");
+            return false;
+          });
+        });
+      }
+
+      /* ---- scroll progress rail ---- */
+      const scrollRail = document.querySelector(".scroll-rail");
+
+      if (scrollRail) {
+        scrollHandlers.push(() => {
+          const travel = document.documentElement.scrollHeight - window.innerHeight;
+          scrollRail.style.setProperty(
+            "--progress",
+            (travel > 0 ? clamp01(window.scrollY / travel) : 0).toFixed(4),
+          );
+          scrollRail.classList.toggle("is-visible", window.scrollY > 40);
+        });
+      }
+
+      /* ---- work counter: which card owns the middle of the viewport ---- */
+      const indicator = document.querySelector(".pf-indicator");
+
+      if (indicator) {
+        const num = indicator.querySelector(".pf-indicator-num");
+        const label = indicator.querySelector(".pf-indicator-label");
+        // every card on the page, in document order, tagged with its segment
+        const cards = [...document.querySelectorAll(".portfolio-segment")].flatMap((section) => {
+          // the eyebrow reads "01 / Social media management" — the part after
+          // the slash is the short segment name; the <h2> is a full sentence
+          const eyebrow = section.querySelector(".section-label")?.textContent ?? "";
+          const name = eyebrow.split("/").pop().trim();
+          return [...section.querySelectorAll(".portfolio-card")].map((el) => ({ el, name }));
+        });
+        const total = String(cards.length).padStart(2, "0");
+        let active = -1;
+
+        if (cards.length) {
+          scrollHandlers.push(() => {
+            const mid = window.innerHeight / 2;
+            let found = -1;
+            for (let i = 0; i < cards.length; i += 1) {
+              const box = cards[i].el.getBoundingClientRect();
+              if (box.top <= mid && box.bottom >= 0) found = i;
+            }
+
+            indicator.classList.toggle("is-visible", found >= 0);
+            if (found < 0 || found === active) return;
+            active = found;
+            num.textContent = `${String(found + 1).padStart(2, "0")} / ${total}`;
+            label.textContent = cards[found].name;
+          });
+        }
+      }
+
+      /* ---- pointer tilt on the cards ---- */
+      if (!reducedMotion && window.matchMedia("(hover: hover)").matches) {
+        document.querySelectorAll(".portfolio-card").forEach((card) => {
+          const reset = () => {
+            card.style.setProperty("--tilt-x", "0deg");
+            card.style.setProperty("--tilt-y", "0deg");
+            card.style.setProperty("--lift", "0");
+          };
+
+          card.addEventListener("pointermove", (event) => {
+            const box = card.getBoundingClientRect();
+            // -0.5 .. 0.5 from the card's centre
+            const x = (event.clientX - box.left) / box.width - 0.5;
+            const y = (event.clientY - box.top) / box.height - 0.5;
+            card.style.setProperty("--tilt-x", `${(-y * 7).toFixed(2)}deg`);
+            card.style.setProperty("--tilt-y", `${(x * 9).toFixed(2)}deg`);
+            card.style.setProperty("--lift", "1");
+          });
+
+          card.addEventListener("pointerleave", reset);
+          card.addEventListener("blur", reset, true);
+        });
+      }
+
+      /* ---- one listener for all of it ---- */
+      if (scrollHandlers.length) {
+        let queued = false;
+        const runHandlers = () => {
+          queued = false;
+          scrollHandlers.forEach((fn) => fn());
+        };
+        const scheduleHandlers = () => {
+          if (queued) return;
+          queued = true;
+          requestAnimationFrame(runHandlers);
+        };
+
+        window.addEventListener("scroll", scheduleHandlers, { passive: true });
+        window.addEventListener("resize", scheduleHandlers);
+        runHandlers();
+      }
+    </script>
+      <script defer src="nav.js"></script>
+      <script defer src="motion.js"></script>
+  </body>
+</html>

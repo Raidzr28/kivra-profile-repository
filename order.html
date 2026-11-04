@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mulai proyek bersama KIVRA Digital. Pilih jenis proyek, ceritakan kebutuhanmu, lalu hubungi admin lewat WhatsApp atau email."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Mulai Proyek — KIVRA Digital</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="order-page">
+    <header class="site-header">
+      <a class="brand" href="tes.html#beranda" aria-label="KIVRA, ke beranda">
+        <span class="brand-logo-frame">
+          <img class="brand-logo" src="Logo-kivra.png" alt="KIVRA Digital — Create. Connect. Grow." />
+        </span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navigasi utama">
+        <a href="tes.html#layanan">Layanan</a>
+        <a href="portfolio.html">Portofolio</a>
+        <a href="tes.html#visi-misi">Tentang</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Buka menu">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <a class="header-cta" href="tes.html#beranda">
+        Kembali ke beranda
+        <span aria-hidden="true">↗</span>
+      </a>
+    </header>
+
+    <main>
+      <section class="order-hero section-wrap">
+        <p class="eyebrow"><span class="status-dot"></span> KIVRA® / Mulai proyek</p>
+        <div class="order-hero-content">
+          <h1>Let’s make<br />something <span>matter.</span></h1>
+          <p>
+            Pilih jenis proyeknya dulu, lalu isi detail yang relevan saja.
+            Tiga langkah, tidak sampai dua menit.
+          </p>
+        </div>
+      </section>
+
+      <section class="order-layout section-wrap" aria-label="Formulir pemesanan dan kontak admin">
+        <form
+          class="order-form"
+          id="order-form"
+          action="https://formsubmit.co/0520d9e35ffa519f2c721878a6e95373"
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="Permintaan proyek baru — KIVRA Digital" />
+          <input type="hidden" name="_template" value="table" />
+          <input class="order-honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <!-- LANGKAH 01 — objek proyek: pilihan ini yang menentukan isi langkah berikutnya -->
+          <fieldset class="order-step" id="step-object">
+            <legend class="order-form-heading">
+              <span class="eyebrow section-label">01 / Jenis proyek</span>
+              <span class="order-step-title">Proyek apa yang ingin dibangun?</span>
+              <span class="order-step-hint">Pilih satu. Pertanyaan berikutnya menyesuaikan pilihanmu.</span>
+            </legend>
+
+            <div class="object-picker">
+              <label class="object-card">
+                <input type="radio" name="project_type" value="Website Development" required data-object="web" />
+                <span class="object-card-body">
+                  <span class="object-card-name">Website Development</span>
+                  <span class="object-card-desc">Company profile, landing page, atau web app yang siap dipakai.</span>
+                  <span class="object-card-meta">Termasuk maintenance</span>
+                </span>
+              </label>
+              <label class="object-card">
+                <input type="radio" name="project_type" value="UI/UX Design" data-object="uiux" />
+                <span class="object-card-body">
+                  <span class="object-card-name">UI/UX Design</span>
+                  <span class="object-card-desc">Riset alur, wireframe, dan tampilan antarmuka.</span>
+                  <span class="object-card-meta">Bisa tanpa development</span>
+                </span>
+              </label>
+              <label class="object-card">
+                <input type="radio" name="project_type" value="Endorsement &amp; KOL" data-object="endorse" />
+                <span class="object-card-body">
+                  <span class="object-card-name">Endorsement &amp; KOL</span>
+                  <span class="object-card-desc">Talent, content creator, atau KOL untuk campaign brand.</span>
+                  <span class="object-card-meta">Per campaign</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- LANGKAH 02 — detail yang hanya relevan untuk objek terpilih -->
+          <fieldset class="order-step is-locked" id="step-detail" aria-live="polite">
+            <legend class="order-form-heading">
+              <span class="eyebrow section-label">02 / Detail proyek</span>
+              <span class="order-step-title">Sedikit lagi soal <span class="order-object-echo">proyeknya</span>.</span>
+              <span class="order-step-hint order-step-locked-hint">Pilih jenis proyek dulu di langkah 01.</span>
+            </legend>
+
+            <div class="order-fields">
+              <label class="order-field" data-for="web">
+                <span>Jenis website</span>
+                <select name="web_kind">
+                  <option value="" selected>Belum ditentukan</option>
+                  <option>Company profile</option>
+                  <option>Landing page</option>
+                  <option>Web app / sistem</option>
+                  <option>Toko online</option>
+                </select>
+              </label>
+              <label class="order-field" data-for="web">
+                <span>Perkiraan jumlah halaman</span>
+                <select name="web_pages">
+                  <option value="" selected>Belum ditentukan</option>
+                  <option>1 halaman</option>
+                  <option>2–5 halaman</option>
+                  <option>6–10 halaman</option>
+                  <option>Lebih dari 10 halaman</option>
+                </select>
+              </label>
+              <label class="order-field" data-for="web">
+                <span>Perlu maintenance rutin?</span>
+                <select name="web_maintenance">
+                  <option value="" selected>Belum ditentukan</option>
+                  <option>Ya, perlu</option>
+                  <option>Tidak perlu</option>
+                </select>
+              </label>
+
+              <label class="order-field" data-for="uiux">
+                <span>Cakupan desain</span>
+                <select name="uiux_scope">
+                  <option value="" selected>Belum ditentukan</option>
+                  <option>Riset &amp; alur pengguna</option>
+                  <option>Wireframe</option>
+                  <option>UI design lengkap</option>
+                  <option>Prototype interaktif</option>
+                </select>
+              </label>
+              <label class="order-field" data-for="uiux">
+                <span>Perkiraan jumlah layar</span>
+                <select name="uiux_screens">
+                  <option value="" selected>Belum ditentukan</option>
+                  <option>Di bawah 5 layar</option>
+                  <option>5–15 layar</option>
+                  <option>Lebih dari 15 layar</option>
+                </select>
+              </label>
+              <label class="order-field" data-for="uiux">
+                <span>Sudah punya desain sebelumnya?</span>
+                <select name="uiux_existing">
+                  <option value="" selected>Belum ditentukan</option>
+                  <option>Mulai dari nol</option>
+                  <option>Perbaikan desain lama</option>
+                </select>
+              </label>
+
+              <label class="order-field" data-for="endorse">
+                <span>Jenis talent</span>
+                <select name="endorse_talent">
+                  <option value="" selected>Belum ditentukan</option>
+                  <option>Content creator</option>
+                  <option>KOL / influencer</option>
+                  <option>Model atau talent acara</option>
+                </select>
+              </label>
+              <label class="order-field" data-for="endorse">
+                <span>Platform utama</span>
+                <select name="endorse_platform">
+                  <option value="" selected>Belum ditentukan</option>
+                  <option>Instagram</option>
+                  <option>TikTok</option>
+                  <option>YouTube</option>
+                  <option>Gabungan</option>
+                </select>
+              </label>
+              <label class="order-field" data-for="endorse">
+                <span>Jumlah konten</span>
+                <select name="endorse_volume">
+                  <option value="" selected>Belum ditentukan</option>
+                  <option>1 konten</option>
+                  <option>2–5 konten</option>
+                  <option>Lebih dari 5 konten</option>
+                </select>
+              </label>
+
+              <label class="order-field">
+                <span>Target waktu mulai</span>
+                <select name="timeline">
+                  <option value="" selected>Belum ditentukan</option>
+                  <option>Secepatnya</option>
+                  <option>Dalam 2–4 minggu</option>
+                  <option>Dalam 1–2 bulan</option>
+                  <option>Lebih dari 2 bulan</option>
+                </select>
+              </label>
+              <label class="order-field">
+                <span>Estimasi budget</span>
+                <select name="budget">
+                  <option value="" selected>Belum ditentukan</option>
+                  <option>Di bawah Rp 1 juta</option>
+                  <option>Rp 1–5 juta</option>
+                  <option>Rp 5–10 juta</option>
+                  <option>Di atas Rp 10 juta</option>
+                  <option>Ingin konsultasi dahulu</option>
+                </select>
+              </label>
+              <label class="order-field order-field-full">
+                <span>Ceritakan kebutuhan proyek <span aria-hidden="true">*</span></span>
+                <textarea
+                  name="brief"
+                  rows="5"
+                  placeholder="Apa tujuan proyeknya, siapa target audiensnya, dan hasil seperti apa yang kamu harapkan?"
+                  required
+                ></textarea>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- LANGKAH 03 — kontak -->
+          <fieldset class="order-step" id="step-contact">
+            <legend class="order-form-heading">
+              <span class="eyebrow section-label">03 / Kontak</span>
+              <span class="order-step-title">Ke mana kami membalas?</span>
+            </legend>
+            <div class="order-fields">
+              <label class="order-field">
+                <span>Nama lengkap <span aria-hidden="true">*</span></span>
+                <input name="name" type="text" autocomplete="name" placeholder="Nama kamu" required />
+              </label>
+              <label class="order-field">
+                <span>Nama brand / bisnis</span>
+                <input name="brand" type="text" autocomplete="organization" placeholder="Nama brand (opsional)" />
+              </label>
+              <label class="order-field order-field-full">
+                <span>Email atau nomor WhatsApp <span aria-hidden="true">*</span></span>
+                <input name="contact" type="text" autocomplete="email" placeholder="Cara kami menghubungimu" required />
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- RINGKASAN — mencerminkan objek terpilih, bukan daftar semua field -->
+          <div class="order-summary" id="order-summary">
+            <p class="order-summary-label">Ringkasan permintaan</p>
+            <dl class="order-summary-list" id="order-summary-list">
+              <div class="order-summary-empty"><span>Belum ada pilihan. Mulai dari langkah 01.</span></div>
+            </dl>
+          </div>
+
+          <button class="order-submit" type="submit" data-magnetic="0.2">
+            Kirim permintaan <span aria-hidden="true">↗</span>
+          </button>
+          <p class="order-form-note">
+            Belum ada ikatan apa pun. Kami balas dulu untuk memastikan kebutuhan dan estimasinya.
+          </p>
+        </form>
+
+        <aside class="order-contact">
+          <p class="eyebrow"><span class="status-dot"></span> 02 / Contact admin</p>
+          <h2 data-split>Ada pertanyaan<br />sebelum mulai?</h2>
+          <p class="order-contact-description">
+            Hubungi admin untuk konsultasi layanan, diskusi kebutuhan, atau
+            informasi lebih lanjut.
+          </p>
+
+          <a class="order-contact-link" href="mailto:kivradigital.agency@gmail.com">
+            <span class="order-contact-icon" aria-hidden="true">@</span>
+            <span><small>Email admin</small><strong>kivradigital.agency@gmail.com</strong></span>
+            <span class="order-contact-arrow" aria-hidden="true">↗</span>
+          </a>
+          <div class="order-contact-link">
+            <span class="order-contact-icon" aria-hidden="true">☎</span>
+            <span><small>Nomor admin</small><strong>0812345678912</strong></span>
+            <span class="order-contact-arrow" aria-hidden="true"></span>
+          </div>
+
+          <p class="order-contact-footnote">Create. Connect. Grow.</p>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer section-wrap">
+      <a class="brand footer-brand" href="tes.html#beranda" aria-label="KIVRA, ke beranda">
+        <span class="brand-logo-frame">
+          <img class="brand-logo" src="Logo-kivra.png" alt="KIVRA Digital — Create. Connect. Grow." />
+        </span>
+      </a>
+      <p>Creative digital agency<br />Create. Connect. Grow.</p>
+      <div class="footer-links">
+        <a href="mailto:kivradigital.agency@gmail.com">Email admin</a>
+        <a href="tes.html#beranda">Kembali ke beranda ↑</a>
+      </div>
+      <span class="copyright">© 2026 Kivra Studio</span>
+    </footer>
+
+      <script defer src="nav.js"></script>
+      <script defer src="order.js"></script>
+      <script defer src="motion.js"></script>
+  </body>
+</html>
