@@ -4757,14 +4757,25 @@ split-word {
   display: inline-block;
   overflow: hidden;
   vertical-align: top;
-  /* padding menahan huruf turun seperti g dan y agar tidak ikut terpotong */
-  padding-bottom: 0.12em;
-  margin-bottom: -0.12em;
+  /* Tinggi pembungkus ini mengikuti line-height judulnya, dan beberapa judul
+     serapat 0.83 — lebih pendek dari tinggi hurufnya sendiri. Dengan
+     overflow:hidden di atas, huruf meluber ke ATAS dan ke BAWAH lalu
+     terpotong. League Spartan memperparahnya karena tidak condensed seperti
+     Arial Narrow dan descender-nya lebih dalam. Ruang diberikan di kedua sisi,
+     lalu ditarik balik dengan margin negatif agar tata letak tidak bergeser. */
+  padding-top: 0.3em;
+  margin-top: -0.3em;
+  padding-bottom: 0.3em;
+  margin-bottom: -0.3em;
 }
 
 split-word-inner {
   display: inline-block;
-  transform: translateY(110%);
+  /* Dihitung, bukan ditebak: kata harus turun setinggi badannya sendiri (100%)
+     DITAMBAH seluruh padding pembungkus (0.6em), baru benar-benar lolos dari
+     kotak. Angka tetap seperti 150% gagal pada judul ber-line-height 0.83,
+     yang badannya pendek sementara paddingnya tetap. */
+  transform: translateY(calc(115% + 0.6em));
   opacity: 0;
   transition: transform 760ms var(--ease-out-quart, cubic-bezier(0.165, 0.84, 0.44, 1)),
     opacity 520ms ease;
@@ -5235,5 +5246,27 @@ split-word-inner {
 
   .included {
     padding: 26px 22px 28px;
+  }
+}
+
+/* Tangkapan layar desktop berformat lanskap lebar (sekitar 2:1). Bingkai
+   showcase default 16/10 akan memotong atas-bawahnya, jadi slide ini memakai
+   rasio sendiri yang mengikuti sumbernya. */
+.showcase-media.is-wide {
+  width: min(100%, 760px);
+  height: auto;
+  max-height: min(100%, 56vh);
+  aspect-ratio: 2 / 1;
+}
+
+.showcase-media.is-wide img {
+  object-fit: contain;
+  background: #1a1a1a;
+}
+
+@media (max-width: 900px) {
+  .showcase-media.is-wide {
+    width: 100%;
+    max-height: min(100%, 40vh);
   }
 }

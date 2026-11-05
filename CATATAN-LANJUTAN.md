@@ -1,6 +1,6 @@
 # KIVRA Digital — status pekerjaan
 
-Terakhir diperbarui: 2026-11-05 (pivot web-only)
+Terakhir diperbarui: 2026-11-05 (revisi 6 poin)
 
 ## Sudah selesai
 - Rebrand KREOVA -> KIVRA Digital di tes.html, portfolio.html, order.html, style.css.
@@ -42,7 +42,49 @@ BELUM disesuaikan (perlu keputusan pemilik):
 - Section Kolaborasi masih menampilkan BuihKicks, BCS Sentul, dan Alin Nur
   Jannah — klien social media/talent, bukan klien web.
 
+## Revisi 6 poin (2026-11-05 siang)
+1. Fokus website — sudah, lihat bagian pivot di atas.
+2. Beranda mengikuti pola referensi (gosocial, resolusiweb, kitaweb):
+   ditambah 4 bagian baru — Jenis website + yang didapat, Cara kerja
+   (Discover/Plan/Create/Deliver), Biaya (tanpa angka, mengarah ke konsultasi),
+   dan Pertanyaan umum (6 soal). Penomoran bagian dirapikan jadi 01-10.
+   Video hero diganti galeri 5 bingkai: 3 panel SVG buatan sendiri di folder
+   hero/ (wireframe -> struktur -> warna merek) lalu 2 tangkapan nyata Shana
+   Studio (beranda dan halaman pemesanan). Rangkaiannya menceritakan cara kerja
+   agensi dan berakhir pada karya sungguhan, bukan antarmuka abstrak.
+   hero-04-jadi.svg masih ada di folder tapi TIDAK dipakai — kalau mau kembali
+   memakai panel abstrak sebagai penutup, tinggal disisipkan lagi.
+   Jeda pergantian bingkai dirapatkan 3600ms -> 2600ms karena bingkainya
+   bertambah, supaya putaran penuh muat dalam waktu pengunjung di area hero.
+   object-fit galeri hero diubah cover -> contain supaya komposisi tidak
+   terpotong di layar jangkung.
+3. Tombol WhatsApp mengambang di 3 halaman. NOMOR BELUM DIISI: cari
+   NOMOR_ADMIN di tes.html, portfolio.html, order.html.
+4. Screenshot Shana versi laptop: SELESAI. Kelima slide kini lanskap desktop.
+   - slide 02 shana-desktop-01-beranda.jpg 1600x789, bingkai .is-wide 2:1
+     (dari screenshot retina milik pengguna, dipotong otomatis)
+   - slide 03-05 shana-desktop-02..04 masing-masing 800x500 rasio 1.60,
+     pas dengan bingkai showcase bawaan 16/10 (diambil lewat browser pane,
+     resolusinya terbatas 800x500 — lebih lembut dari yang pertama).
+   Enam kartu Shana di portfolio.html MASIH memakai tangkapan HP potret.
+5. Palet: --accent #373ffd, --sky #60c1e5, --ink #1b365d, --paper #ffffff.
+   26 abu kehijauan sisa desain lama diganti netral bernuansa navy.
+   Uji kontras: #60c1e5 di atas putih hanya 2,05 (jangan untuk teks);
+   #373ffd di atas navy hanya 1,90, jadi 9 aturan di bidang gelap dialihkan
+   ke --sky.
+6. Font League Spartan via Google Fonts di 3 halaman. Karena tidak condensed
+   seperti Arial Narrow, batas bawah ukuran judul kontak diturunkan dan ruang
+   descender pembungkus kata dinaikkan 0.12em -> 0.24em.
+
 ## Belum selesai
+0. Nomor WhatsApp admin belum diisi (placeholder NOMOR_ADMIN di 3 halaman).
+0b. Kartu Shana di portfolio.html masih tangkapan HP. Kalau mau seragam
+    dengan beranda, ganti ke shana-desktop-*.jpg.
+0d. Tiga tangkapan desktop (slide 03-05) hanya 800x500 karena panel browser
+    membatasi resolusi. Kalau ingin setajam slide 02, tangkap sendiri di Mac
+    dengan Cmd+Shift+4 lalu spasi, lalu kirim — saya potong dan pasang.
+0c. Isi FAQ dan daftar "sudah termasuk" masih draf: cek sendiri soal domain
+    atas nama klien, satu sesi pelatihan, dan masa dukungan sebelum tayang.
 1. Masih ada file tak terpakai yang sengaja tidak dihapus (~5,9 MB):
    - foto portofolio/Hero/hero social media/ (6 file, 5,2 MB) — foto klien asli
    - foto portofolio/web porto/*.jpeg asli WhatsApp (8 file, 676 KB)
