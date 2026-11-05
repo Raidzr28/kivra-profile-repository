@@ -275,12 +275,28 @@
     clips.forEach((v) => io.observe(v));
   };
 
+  /* ------------------------------------------------------------------ 6
+     Tombol mengambang WhatsApp.
+
+     Disembunyikan sampai pengunjung melewati tinggi satu layar, supaya tampilan
+     pertama tetap bersih. Nomor dibaca dari atribut data-wa pada elemen itu
+     sendiri, jadi menggantinya cukup di HTML tanpa menyentuh berkas ini. */
+  const initWhatsApp = () => {
+    const btn = document.querySelector(".wa-float");
+    if (!btn) return;
+
+    const show = () => btn.classList.toggle("is-ready", window.scrollY > window.innerHeight * 0.6);
+    show();
+    window.addEventListener("scroll", show, { passive: true });
+  };
+
   const start = () => {
     initPageTransition();
     initSplitText();
     initParallax();
     initCursor();
     initLoopVideos();
+    initWhatsApp();
   };
 
   if (document.readyState === "loading") {

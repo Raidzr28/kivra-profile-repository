@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="KIVRA Digital adalah creative technology agency yang membangun website, merancang UI/UX, dan menjalankan endorsement untuk membantu bisnis tumbuh di era teknologi."
+      content="KIVRA Digital adalah creative technology agency yang membangun website dan merancang UI/UX untuk membantu bisnis tumbuh di era teknologi."
     />
     <meta name="theme-color" content="#ffffff" />
     <title>KIVRA Digital — Create. Connect. Grow.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -36,10 +42,12 @@
         <a href="#keunggulan">Keunggulan</a>
         <a href="#layanan">Layanan</a>
         <a href="portfolio.html">Portofolio</a>
+        <a href="#jenis">Jenis</a>
+        <a href="#proses">Cara kerja</a>
         <a href="#karya">Karya</a>
         <a href="#kolaborasi">Kolaborasi</a>
-        <a href="#talent">Talent</a>
-        <a href="#visi-misi">Visi &amp; Misi</a>
+        <a href="#biaya">Biaya</a>
+        <a href="#faq">FAQ</a>
       </nav>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Buka menu">
         <span class="nav-toggle-bar" aria-hidden="true"></span>
@@ -86,44 +94,40 @@
           <div class="hero-media is-sealed" id="hero-media" role="group" aria-label="Galeri hero KIVRA">
             <div class="hero-media-frame">
               <img
-                src="placeholder/hero/01-loewe.jpg"
-                data-placeholder="true"
-                alt="Visual kampanye Loewe"
-                width="1200"
-                height="1500"
+                src="hero/hero-01-wireframe.svg"
+                alt="Tahap satu: rangka kasar sebuah halaman, masih berupa garis putus-putus"
+                width="1600"
+                height="1000"
                 decoding="async"
               />
               <img
-                src="placeholder/hero/02-editorial.jpg"
-                data-placeholder="true"
-                alt="Referensi visual kampanye editorial high-end"
-                width="1280"
-                height="1600"
+                src="hero/hero-02-struktur.svg"
+                alt="Tahap dua: blok tata letak mulai padat dan kisi kolom terlihat"
+                width="1600"
+                height="1000"
                 loading="lazy"
                 decoding="async"
               />
               <img
-                src="placeholder/hero/03-loewe.jpg"
-                data-placeholder="true"
-                alt="Visual kampanye Loewe"
-                width="1280"
-                height="1599"
+                src="hero/hero-03-merek.svg"
+                alt="Tahap tiga: warna merek KIVRA mengisi navigasi, tombol, dan bidang media"
+                width="1600"
+                height="1000"
                 loading="lazy"
                 decoding="async"
               />
               <img
-                src="placeholder/hero/04-aesop.jpg"
-                data-placeholder="true"
-                alt="Visual kampanye produk Aesop"
-                width="1440"
-                height="1500"
+                src="hero/hero-04-jadi.svg"
+                alt="Tahap empat: antarmuka selesai dengan isi, tombol ajakan, dan bilah kaki"
+                width="1600"
+                height="1000"
                 loading="lazy"
                 decoding="async"
               />
             </div>
             <p class="hero-media-caption">
-              <span>Ide besar,</span>
-              <span>ruang tanpa batas.</span>
+              <span>Dari rangka</span>
+              <span>sampai jadi.</span>
             </p>
           </div>
         </div>
@@ -134,9 +138,9 @@
         <div class="client-list">
           <span class="focus-word">WEBSITE</span>
           <span class="focus-divider" aria-hidden="true">/</span>
-          <span class="focus-word">MEDIA SOSIAL</span>
+          <span class="focus-word">UI/UX DESIGN</span>
           <span class="focus-divider" aria-hidden="true">/</span>
-          <span class="focus-word">TALENT KREATIF</span>
+          <span class="focus-word">MAINTENANCE</span>
         </div>
       </section>
 
@@ -247,7 +251,7 @@
         <div class="services-intro">
           <p class="eyebrow section-label">04 / Our services</p>
           <h2 data-split>What we <span>do.</span></h2>
-          <p>Fokus kami tiga hal: membangun website, merancang pengalaman penggunanya, dan menghubungkan brand dengan audiens lewat endorsement.</p>
+          <p>Fokus kami dua hal: membangun website yang siap dipakai, dan merancang pengalaman pengguna di dalamnya.</p>
         </div>
         <div class="service-list">
           <a class="service-item service-link" href="portfolio.html#web-uiux" aria-label="Lihat portofolio Website Development">
@@ -298,51 +302,96 @@
             </figure>
             <span class="service-plus" aria-hidden="true">↗</span>
           </a>
-          <a class="service-item talent-service service-link" href="portfolio.html#talent-kol" aria-label="Lihat portofolio Endorsement dan KOL">
-            <span class="service-number">03</span>
-            <div class="talent-service-copy">
-              <h3>Endorsement &amp; KOL</h3>
-              <p>Penyediaan dan koordinasi talent, content creator, atau KOL sesuai kebutuhan campaign.</p>
-              <div class="service-benefits">
-                <span>Benefit untuk klien</span>
-                <ul>
-                  <li>Mempermudah pencarian talent yang sesuai.</li>
-                  <li>Menjangkau audiens yang relevan.</li>
-                  <li>Mendukung promosi dan campaign brand.</li>
-                  <li>Memperluas jangkauan bisnis secara online.</li>
-                </ul>
-              </div>
-            </div>
-            <figure class="talent-service-photo" data-parallax="0.12">
-              <img
-                src="./foto%20portofolio/talent%20kreatif/Five.jpeg"
-                alt="Potret Alin Nur, talent kreatif KIVRA Digital"
-              />
-              <figcaption>Talent Kivra</figcaption>
-            </figure>
-            <span class="service-plus" aria-hidden="true">↗</span>
-          </a>
         </div>
       </section>
 
-      <section class="showcase section-wrap" id="karya" data-cursor="Lihat karya" style="--showcase-count: 10; --showcase-step: 55vh">
+      <section class="kinds section-wrap" id="jenis">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow section-label">05 / Jenis website</p>
+            <h2 data-split>Yang bisa kami <span>bangun.</span></h2>
+          </div>
+          <p class="values-intro">Empat bentuk yang paling sering dibutuhkan. Kalau kebutuhanmu di luar ini, ceritakan saja.</p>
+        </div>
+
+        <ul class="kind-list">
+          <li class="kind-item">
+            <h3>Company profile</h3>
+            <p>Profil, layanan, dan kontak bisnis dalam satu tempat yang rapi. Cocok saat calon klien mencari namamu di Google dan ingin tahu kamu nyata.</p>
+          </li>
+          <li class="kind-item">
+            <h3>Landing page</h3>
+            <p>Satu halaman dengan satu tujuan: kampanye, promo, atau peluncuran produk. Semua isinya mengarah ke satu tombol.</p>
+          </li>
+          <li class="kind-item">
+            <h3>Toko online</h3>
+            <p>Katalog produk, keranjang, dan alur pembayaran yang mudah diikuti pembeli sampai selesai.</p>
+          </li>
+          <li class="kind-item">
+            <h3>Web app</h3>
+            <p>Sistem dengan alur dan datanya sendiri — seperti aplikasi pemesanan Shana Studio yang kami bangun.</p>
+          </li>
+        </ul>
+
+        <div class="included">
+          <h3 class="included-title">Setiap website sudah termasuk</h3>
+          <ul class="included-list">
+            <li>Domain dan hosting tahun pertama</li>
+            <li>Sertifikat SSL, alamatnya diawali https</li>
+            <li>Tampilan menyesuaikan HP, tablet, dan laptop</li>
+            <li>Akses admin penuh atas namamu</li>
+            <li>Satu sesi pelatihan mengelola isi situs</li>
+            <li>Terdaftar di Google</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="process section-wrap" id="proses">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow section-label">06 / Cara kerja</p>
+            <h2 data-split>Empat langkah, <span>tanpa tebak-tebakan.</span></h2>
+          </div>
+          <p class="values-intro">Kamu tahu posisi proyek di setiap tahap, dan apa yang kami butuhkan darimu.</p>
+        </div>
+
+        <ol class="process-list">
+          <li class="process-step">
+            <span class="process-num">01</span>
+            <h3>Discover</h3>
+            <p>Kami dengarkan tujuan, audiens, dan kendalamu sekarang. Keluarannya: ringkasan kebutuhan yang kamu setujui dulu.</p>
+          </li>
+          <li class="process-step">
+            <span class="process-num">02</span>
+            <h3>Plan</h3>
+            <p>Struktur halaman, alur pengguna, dan tenggat disusun. Kamu melihat rangkanya sebelum satu baris kode ditulis.</p>
+          </li>
+          <li class="process-step">
+            <span class="process-num">03</span>
+            <h3>Create</h3>
+            <p>Desain dan pengembangan berjalan. Kamu dapat tautan pratinjau yang bisa dibuka kapan saja selama proses.</p>
+          </li>
+          <li class="process-step">
+            <span class="process-num">04</span>
+            <h3>Deliver</h3>
+            <p>Situs aktif, akses diserahkan, dan kami temani lewat masa dukungan.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="showcase section-wrap" id="karya" data-cursor="Lihat karya" style="--showcase-count: 5; --showcase-step: 55vh">
         <div class="showcase-pin">
           <div class="showcase-head">
-            <p class="eyebrow section-label">05 / Karya pilihan</p>
-            <p class="showcase-counter"><span class="showcase-counter-now">01</span><span class="showcase-counter-sep">/</span><span class="showcase-counter-total">10</span></p>
+            <p class="eyebrow section-label">07 / Karya pilihan</p>
+            <p class="showcase-counter"><span class="showcase-counter-now">01</span><span class="showcase-counter-sep">/</span><span class="showcase-counter-total">5</span></p>
           </div>
 
           <ol class="showcase-indicator" aria-label="Daftar karya pilihan">
           <li><button type="button" class="showcase-dot is-active" data-index="0" aria-label="Lihat karya 01: Ide besar, ruang tanpa batas"><span class="showcase-dot-num">01</span><span class="showcase-dot-label">Ide besar, ruang tanpa batas</span></button></li>
-          <li><button type="button" class="showcase-dot" data-index="1" aria-label="Lihat karya 02: Business Center Sentul HNI"><span class="showcase-dot-num">02</span><span class="showcase-dot-label">Business Center Sentul HNI</span></button></li>
-          <li><button type="button" class="showcase-dot" data-index="2" aria-label="Lihat karya 03: BuihKicks"><span class="showcase-dot-num">03</span><span class="showcase-dot-label">BuihKicks</span></button></li>
-          <li><button type="button" class="showcase-dot" data-index="3" aria-label="Lihat karya 04: Build · Create · Inspire"><span class="showcase-dot-num">04</span><span class="showcase-dot-label">Build · Create · Inspire</span></button></li>
-          <li><button type="button" class="showcase-dot" data-index="4" aria-label="Lihat karya 05: Alin Nur 05"><span class="showcase-dot-num">05</span><span class="showcase-dot-label">Alin Nur · luar ruang</span></button></li>
-          <li><button type="button" class="showcase-dot" data-index="5" aria-label="Lihat karya 06: Alin Nur 07"><span class="showcase-dot-num">06</span><span class="showcase-dot-label">Alin Nur · studio</span></button></li>
-          <li><button type="button" class="showcase-dot" data-index="6" aria-label="Lihat karya 07: Shana Studio · Pilih paket"><span class="showcase-dot-num">07</span><span class="showcase-dot-label">Pilih paket</span></button></li>
-          <li><button type="button" class="showcase-dot" data-index="7" aria-label="Lihat karya 08: Shana Studio · Jadwal & lokasi"><span class="showcase-dot-num">08</span><span class="showcase-dot-label">Jadwal &amp; lokasi</span></button></li>
-          <li><button type="button" class="showcase-dot" data-index="8" aria-label="Lihat karya 09: Shana Studio · Ringkasan pesanan"><span class="showcase-dot-num">09</span><span class="showcase-dot-label">Ringkasan pesanan</span></button></li>
-          <li><button type="button" class="showcase-dot" data-index="9" aria-label="Lihat karya 10: Shana Studio · Asisten chat"><span class="showcase-dot-num">10</span><span class="showcase-dot-label">Asisten chat</span></button></li>
+          <li><button type="button" class="showcase-dot" data-index="1" aria-label="Lihat karya 02: Shana Studio · Pilih paket"><span class="showcase-dot-num">02</span><span class="showcase-dot-label">Pilih paket</span></button></li>
+          <li><button type="button" class="showcase-dot" data-index="2" aria-label="Lihat karya 03: Shana Studio · Jadwal & lokasi"><span class="showcase-dot-num">03</span><span class="showcase-dot-label">Jadwal &amp; lokasi</span></button></li>
+          <li><button type="button" class="showcase-dot" data-index="3" aria-label="Lihat karya 04: Shana Studio · Ringkasan pesanan"><span class="showcase-dot-num">04</span><span class="showcase-dot-label">Ringkasan pesanan</span></button></li>
+          <li><button type="button" class="showcase-dot" data-index="4" aria-label="Lihat karya 05: Shana Studio · Asisten chat"><span class="showcase-dot-num">05</span><span class="showcase-dot-label">Asisten chat</span></button></li>
           </ol>
 
           <div class="showcase-stage">
@@ -356,81 +405,41 @@
           <p class="showcase-cat"><span class="showcase-cat-num">01</span>Motion loop · Showreel</p>
         </article>
         <article class="showcase-slide" data-theme="light" aria-hidden="true">
-          <h3 class="showcase-title">Business Center Sentul HNI</h3>
-          <figure class="showcase-media">
-            <img src="foto%20portofolio/Social%20media/HNI%20sentul.png" alt="Portofolio konten media sosial Business Center Sentul HNI" loading="lazy" decoding="async" />
-          </figure>
-          <p class="showcase-cat"><span class="showcase-cat-num">02</span>Social media management</p>
-        </article>
-        <article class="showcase-slide" data-theme="light" aria-hidden="true">
-          <h3 class="showcase-title">BuihKicks</h3>
-          <figure class="showcase-media">
-            <img src="foto%20portofolio/Social%20media/buihkicks.png" alt="Portofolio akun media sosial dan konten BuihKicks" loading="lazy" decoding="async" />
-          </figure>
-          <p class="showcase-cat"><span class="showcase-cat-num">03</span>Social media management</p>
-        </article>
-        <article class="showcase-slide" data-theme="dark" aria-hidden="true">
-          <h3 class="showcase-title">Build · Create · Inspire</h3>
-          <figure class="showcase-media">
-            <img src="foto%20portofolio/Content%20Creative/one.jpg" alt="Konten kreatif bertema inspirasi dan produktivitas" loading="lazy" decoding="async" />
-          </figure>
-          <p class="showcase-cat"><span class="showcase-cat-num">04</span>Creative content · Campaign visual</p>
-        </article>
-        <article class="showcase-slide" data-theme="light" aria-hidden="true">
-          <h3 class="showcase-title">Alin Nur</h3>
-          <figure class="showcase-media">
-            <img src="foto%20portofolio/talent%20kreatif/Five.jpeg" alt="Potret Alin Nur di luar ruangan, talent kreatif KIVRA" loading="lazy" decoding="async" />
-          </figure>
-          <p class="showcase-cat"><span class="showcase-cat-num">05</span>Talent portfolio · Foto terbaru</p>
-        </article>
-        <article class="showcase-slide" data-theme="light" aria-hidden="true">
-          <h3 class="showcase-title">Alin Nur</h3>
-          <figure class="showcase-media">
-            <img src="foto%20portofolio/talent%20kreatif/seven.jpeg" alt="Potret Alin Nur di dalam studio, talent kreatif KIVRA" loading="lazy" decoding="async" />
-          </figure>
-          <p class="showcase-cat"><span class="showcase-cat-num">06</span>Talent portfolio · Foto terbaru</p>
-        </article>
-        <article class="showcase-slide" data-theme="light" aria-hidden="true">
           <h3 class="showcase-title">Shana Studio</h3>
           <figure class="showcase-media is-portrait">
             <img src="foto%20portofolio/web%20porto/shana-01-paket.jpg" alt="Layar pilih paket aplikasi Shana Studio berisi daftar paket makeup beserta durasi dan harga" loading="lazy" decoding="async" />
           </figure>
-          <p class="showcase-cat"><span class="showcase-cat-num">07</span>Web app · Alur pemesanan</p>
+          <p class="showcase-cat"><span class="showcase-cat-num">02</span>Web app · Alur pemesanan</p>
         </article>
         <article class="showcase-slide" data-theme="light" aria-hidden="true">
           <h3 class="showcase-title">Shana Studio</h3>
           <figure class="showcase-media is-portrait">
             <img src="foto%20portofolio/web%20porto/shana-03-jadwal.jpg" alt="Layar pemilihan tanggal, jam mulai, dan lokasi acara pada aplikasi Shana Studio" loading="lazy" decoding="async" />
           </figure>
-          <p class="showcase-cat"><span class="showcase-cat-num">08</span>Web app · Alur pemesanan</p>
+          <p class="showcase-cat"><span class="showcase-cat-num">03</span>Web app · Alur pemesanan</p>
         </article>
         <article class="showcase-slide" data-theme="light" aria-hidden="true">
           <h3 class="showcase-title">Shana Studio</h3>
           <figure class="showcase-media is-portrait">
             <img src="foto%20portofolio/web%20porto/shana-04-ringkasan.jpg" alt="Layar ringkasan pesanan Shana Studio dengan rincian biaya, total, dan deposit" loading="lazy" decoding="async" />
           </figure>
-          <p class="showcase-cat"><span class="showcase-cat-num">09</span>Web app · Checkout</p>
+          <p class="showcase-cat"><span class="showcase-cat-num">04</span>Web app · Checkout</p>
         </article>
         <article class="showcase-slide" data-theme="light" aria-hidden="true">
           <h3 class="showcase-title">Shana Studio</h3>
           <figure class="showcase-media is-portrait">
             <img src="foto%20portofolio/web%20porto/shana-05-asisten.jpg" alt="Layar asisten chat Shana Studio yang menjawab pertanyaan paket dan ketersediaan jadwal" loading="lazy" decoding="async" />
           </figure>
-          <p class="showcase-cat"><span class="showcase-cat-num">10</span>Web app · Fitur asisten</p>
+          <p class="showcase-cat"><span class="showcase-cat-num">05</span>Web app · Fitur asisten</p>
         </article>
           </div>
 
           <div class="showcase-rail" aria-label="Pintasan karya">
           <button type="button" class="showcase-thumb is-active" data-index="0" aria-label="Lihat karya 01: Ide besar, ruang tanpa batas"><span class="showcase-thumb-video" aria-hidden="true">▶</span></button>
-          <button type="button" class="showcase-thumb" data-index="1" aria-label="Lihat karya 02: Business Center Sentul HNI"><img src="foto%20portofolio/Social%20media/HNI%20sentul.png" alt="" loading="lazy" decoding="async" /></button>
-          <button type="button" class="showcase-thumb" data-index="2" aria-label="Lihat karya 03: BuihKicks"><img src="foto%20portofolio/Social%20media/buihkicks.png" alt="" loading="lazy" decoding="async" /></button>
-          <button type="button" class="showcase-thumb" data-index="3" aria-label="Lihat karya 04: Build · Create · Inspire"><img src="foto%20portofolio/Content%20Creative/one.jpg" alt="" loading="lazy" decoding="async" /></button>
-          <button type="button" class="showcase-thumb" data-index="4" aria-label="Lihat karya 05: Alin Nur 05"><img src="foto%20portofolio/talent%20kreatif/Five.jpeg" alt="" loading="lazy" decoding="async" /></button>
-          <button type="button" class="showcase-thumb" data-index="5" aria-label="Lihat karya 06: Alin Nur 07"><img src="foto%20portofolio/talent%20kreatif/seven.jpeg" alt="" loading="lazy" decoding="async" /></button>
-          <button type="button" class="showcase-thumb" data-index="6" aria-label="Lihat karya 07: Shana Studio · Pilih paket"><img src="foto%20portofolio/web%20porto/shana-01-paket.jpg" alt="" loading="lazy" decoding="async" /></button>
-          <button type="button" class="showcase-thumb" data-index="7" aria-label="Lihat karya 08: Shana Studio · Jadwal & lokasi"><img src="foto%20portofolio/web%20porto/shana-03-jadwal.jpg" alt="" loading="lazy" decoding="async" /></button>
-          <button type="button" class="showcase-thumb" data-index="8" aria-label="Lihat karya 09: Shana Studio · Ringkasan pesanan"><img src="foto%20portofolio/web%20porto/shana-04-ringkasan.jpg" alt="" loading="lazy" decoding="async" /></button>
-          <button type="button" class="showcase-thumb" data-index="9" aria-label="Lihat karya 10: Shana Studio · Asisten chat"><img src="foto%20portofolio/web%20porto/shana-05-asisten.jpg" alt="" loading="lazy" decoding="async" /></button>
+          <button type="button" class="showcase-thumb" data-index="1" aria-label="Lihat karya 02: Shana Studio · Pilih paket"><img src="foto%20portofolio/web%20porto/shana-01-paket.jpg" alt="" loading="lazy" decoding="async" /></button>
+          <button type="button" class="showcase-thumb" data-index="2" aria-label="Lihat karya 03: Shana Studio · Jadwal & lokasi"><img src="foto%20portofolio/web%20porto/shana-03-jadwal.jpg" alt="" loading="lazy" decoding="async" /></button>
+          <button type="button" class="showcase-thumb" data-index="3" aria-label="Lihat karya 04: Shana Studio · Ringkasan pesanan"><img src="foto%20portofolio/web%20porto/shana-04-ringkasan.jpg" alt="" loading="lazy" decoding="async" /></button>
+          <button type="button" class="showcase-thumb" data-index="4" aria-label="Lihat karya 05: Shana Studio · Asisten chat"><img src="foto%20portofolio/web%20porto/shana-05-asisten.jpg" alt="" loading="lazy" decoding="async" /></button>
           </div>
 
           <div class="showcase-progress" aria-hidden="true"><span class="showcase-progress-bar"></span></div>
@@ -441,7 +450,7 @@
       <section class="collab" data-desktop-only="true" style="--total-items: 4" aria-label="Kolaborasi brand">
         <div class="collab-pin">
           <div class="collab-head">
-            <p class="section-index"><span>06</span><i aria-hidden="true"></i><span>Kolaborasi</span></p>
+            <p class="section-index"><span>08</span><i aria-hidden="true"></i><span>Kolaborasi</span></p>
             <p class="collab-desc">
               Dari UMKM sampai creator, KIVRA Digital terbiasa bekerja lintas
               kebutuhan dan lintas skala.
@@ -462,7 +471,7 @@
           </div>
 
           <div class="collab-aside">
-            <p class="section-index"><span>06</span><i aria-hidden="true"></i><span>Kolaborasi</span></p>
+            <p class="section-index"><span>08</span><i aria-hidden="true"></i><span>Kolaborasi</span></p>
             <p class="collab-desc">
               Dari UMKM sampai creator, KIVRA Digital terbiasa bekerja lintas
               kebutuhan dan lintas skala.
@@ -476,7 +485,7 @@
     <section class="collab-wall section-wrap" id="kolaborasi" aria-label="Logo kolaborasi">
         <div class="section-heading">
           <div>
-            <p class="eyebrow section-label">06 / Kolaborasi brand</p>
+            <p class="eyebrow section-label">08 / Kolaborasi brand</p>
             <h2 data-split>Brand yang <span>bekerja bersama kami.</span></h2>
           </div>
           <p class="values-intro">Dari brand lokal yang sedang tumbuh sampai rumah mode internasional.</p>
@@ -501,46 +510,6 @@
         </div>
       </section>
 
-      <section class="talent-stack" id="talent" style="--total-items: 7" aria-label="Talent kreatif KIVRA">
-        <div class="talent-stack-pin">
-          <div class="talent-stack-head">
-            <p class="section-index"><span>07</span><i aria-hidden="true"></i><span>Talent kreatif</span></p>
-            <h2 data-split>Orang-orang di balik <span>karyanya.</span></h2>
-            <p class="talent-stack-counter"><span class="talent-counter-now">01</span> / 07</p>
-          </div>
-          <div class="talent-cards">
-            <article class="talent-card" style="--index: 0">
-              <div class="talent-card-obj"><img src="foto%20portofolio/talent%20kreatif/one.jpeg" alt="Potret Alin Nur, talent kreatif KIVRA" loading="lazy" decoding="async" /></div>
-              <p class="talent-card-caption">Alin Nur</p>
-            </article>
-            <article class="talent-card" style="--index: 1">
-              <div class="talent-card-obj"><img src="foto%20portofolio/talent%20kreatif/two.jpeg" alt="Potret Alin Nur, talent kreatif KIVRA" loading="lazy" decoding="async" /></div>
-              <p class="talent-card-caption">Alin Nur</p>
-            </article>
-            <article class="talent-card" style="--index: 2">
-              <div class="talent-card-obj"><img src="foto%20portofolio/talent%20kreatif/three.jpeg" alt="Potret Alin Nur, talent kreatif KIVRA" loading="lazy" decoding="async" /></div>
-              <p class="talent-card-caption">Alin Nur</p>
-            </article>
-            <article class="talent-card" style="--index: 3">
-              <div class="talent-card-obj"><img src="foto%20portofolio/talent%20kreatif/four.jpeg" alt="Potret Alin Nur, talent kreatif KIVRA" loading="lazy" decoding="async" /></div>
-              <p class="talent-card-caption">Alin Nur</p>
-            </article>
-            <article class="talent-card" style="--index: 4">
-              <div class="talent-card-obj"><img src="foto%20portofolio/talent%20kreatif/Five.jpeg" alt="Potret Alin Nur, talent kreatif KIVRA" loading="lazy" decoding="async" /></div>
-              <p class="talent-card-caption">Alin Nur</p>
-            </article>
-            <article class="talent-card" style="--index: 5">
-              <div class="talent-card-obj"><img src="foto%20portofolio/talent%20kreatif/six.jpeg" alt="Potret Alin Nur, talent kreatif KIVRA" loading="lazy" decoding="async" /></div>
-              <p class="talent-card-caption">Alin Nur</p>
-            </article>
-            <article class="talent-card" style="--index: 6">
-              <div class="talent-card-obj"><img src="foto%20portofolio/talent%20kreatif/seven.jpeg" alt="Potret Alin Nur, talent kreatif KIVRA" loading="lazy" decoding="async" /></div>
-              <p class="talent-card-caption">Alin Nur</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
       <!-- Pita tipografi bergerak: komposisi Remotion WordLoop, dirender jadi
            klip 6 detik yang menyambung mulus. Dipakai sebagai jeda visual
            sebelum ajakan terakhir. -->
@@ -554,6 +523,63 @@
           data-motion-loop
         ></video>
       </div>
+
+      <section class="cost section-wrap" id="biaya">
+        <div class="cost-inner">
+          <p class="eyebrow section-label">09 / Biaya</p>
+          <h2 data-split>Berapa biayanya?</h2>
+          <p class="cost-lead">
+            Tergantung jumlah halaman, fitur, dan tingkat kerumitannya — landing page
+            satu halaman jelas berbeda dari sistem pemesanan. Kami hitung setelah tahu
+            kebutuhanmu, lalu kirim rinciannya sebelum ada komitmen apa pun.
+          </p>
+          <ul class="cost-points">
+            <li>Konsultasi awal tanpa biaya</li>
+            <li>Rincian biaya di muka, sebelum pengerjaan dimulai</li>
+            <li>Biaya perpanjangan tahunan disampaikan sejak awal</li>
+          </ul>
+          <a class="cost-cta" href="order.html" data-magnetic="0.2">
+            Minta perhitungan <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="faq section-wrap" id="faq">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow section-label">10 / Pertanyaan umum</p>
+            <h2 data-split>Yang sering <span>ditanyakan.</span></h2>
+          </div>
+          <p class="values-intro">Belum terjawab? Chat admin lewat tombol WhatsApp di pojok layar.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Berapa lama pengerjaannya?</summary>
+            <p>Tergantung jenisnya. Landing page paling cepat, company profile menengah, web app paling lama karena fiturnya perlu diuji. Tenggat pastinya kami sepakati di langkah Plan, bukan dikira-kira di awal.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Apa yang perlu saya siapkan?</summary>
+            <p>Logo, teks, dan foto. Kalau belum ada, bilang saja — kami bantu susun strukturnya dan beri tahu bagian mana yang perlu kamu isi.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Domain dan hosting atas nama siapa?</summary>
+            <p>Atas namamu. Akses penuh diserahkan setelah situs aktif, jadi kamu tidak terikat pada kami untuk memindahkannya suatu saat.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Bisakah saya mengubah isinya sendiri?</summary>
+            <p>Bisa. Kamu dapat akses admin dan satu sesi pelatihan untuk mengganti teks, gambar, dan menambah halaman tanpa perlu menghubungi kami.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Ada biaya tahunan?</summary>
+            <p>Ada, untuk perpanjangan domain dan hosting. Nominalnya kami sampaikan di awal bersama rincian biaya, bukan muncul belakangan.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Bagaimana setelah situs jadi?</summary>
+            <p>Ada masa dukungan untuk perbaikan dan penyesuaian kecil. Setelah itu kamu bisa lanjut ke maintenance rutin atau mengelolanya sendiri.</p>
+          </details>
+        </div>
+      </section>
 
       <section class="contact section-wrap" id="kontak">
         <p class="eyebrow"><span class="status-dot"></span> Punya ide? Kami siap mendengar.</p>
@@ -943,57 +969,6 @@
         scrollHandlers.push(onCollabScroll);
       }
 
-      /* ---- talent: diagonal card stack + scroll-velocity drift ---- */
-      const talentStack = document.querySelector(".talent-stack");
-
-      if (talentStack) {
-        const talentCounter = talentStack.querySelector(".talent-counter-now");
-        const talentTotal = talentStack.querySelectorAll(".talent-card").length;
-        const talentLast = Math.max(talentTotal - 1, 1);
-        let lastScrollY = window.scrollY;
-        let velocity = 0;
-        let talentActive = -1;
-
-        const onTalentScroll = () => {
-          const progress = pinProgress(talentStack);
-          talentStack.style.setProperty("--progress", progress.toFixed(4));
-
-          // reference drives `--scroll-velocity` into a translate on the
-          // inner object, so the photo drifts inside its frame
-          const delta = window.scrollY - lastScrollY;
-          lastScrollY = window.scrollY;
-          velocity = Math.max(-24, Math.min(24, velocity * 0.82 + delta * 0.18));
-          talentStack.style.setProperty("--scroll-velocity", velocity.toFixed(2));
-
-          const index = Math.min(Math.round(progress * talentLast), talentLast);
-          if (index === talentActive) return;
-          talentActive = index;
-          if (talentCounter) talentCounter.textContent = String(index + 1).padStart(2, "0");
-        };
-
-        scrollHandlers.push(onTalentScroll);
-
-        // Below 1200px the stack is a swipe rail (see style.css), so the
-        // counter tracks the rail's own scroll rather than page progress.
-        const talentRail = talentStack.querySelector(".talent-cards");
-
-        if (talentRail) {
-          talentRail.addEventListener(
-            "scroll",
-            () => {
-              if (talentRail.scrollWidth <= talentRail.clientWidth) return;
-              const ratio =
-                talentRail.scrollLeft / (talentRail.scrollWidth - talentRail.clientWidth);
-              const index = Math.min(Math.round(ratio * talentLast), talentLast);
-              if (index === talentActive) return;
-              talentActive = index;
-              if (talentCounter) talentCounter.textContent = String(index + 1).padStart(2, "0");
-            },
-            { passive: true },
-          );
-        }
-      }
-
       /* ---- scroll progress rail (ScrollProgress: scaleY(var(--progress))) ---- */
       const scrollRail = document.querySelector(".scroll-rail");
 
@@ -1028,5 +1003,21 @@
     </script>
       <script defer src="nav.js"></script>
       <script defer src="motion.js"></script>
+    <!-- Tombol WhatsApp mengambang.
+         GANTI NOMOR DI SINI: format internasional tanpa tanda + dan tanpa spasi.
+         Contoh 0812-3456-7890 ditulis 6281234567890. -->
+    <a
+      class="wa-float"
+      href="https://wa.me/NOMOR_ADMIN?text=Halo%20KIVRA%20Digital%2C%20saya%20ingin%20bertanya%20soal%20pembuatan%20website."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Hubungi admin KIVRA Digital lewat WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.75-.71 2-1.4.25-.69.25-1.28.17-1.4-.07-.13-.27-.2-.57-.35z"/>
+        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.21-8.23 8.21z"/>
+      </svg>
+      <span class="wa-float-label">Chat admin</span>
+    </a>
   </body>
 </html>
