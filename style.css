@@ -5270,3 +5270,152 @@ split-word-inner {
     max-height: min(100%, 40vh);
   }
 }
+
+/* ==========================================================================
+   Optimisasi mobile
+   Disusun dari hasil audit di 390px dan 360px: ukuran sasaran sentuh, ambang
+   zoom otomatis iOS, batas keterbacaan teks, dan luberan horizontal.
+   Ditaruh paling akhir agar menang atas aturan sebelumnya pada kekhususan
+   yang setara.
+   ========================================================================== */
+@media (max-width: 760px) {
+  /* ---- 1. Zoom otomatis iOS ----
+     Safari di iOS memperbesar halaman begitu pengguna menyentuh kolom isian
+     ber-font di bawah 16px, lalu tidak mengembalikannya. Seluruh isian form
+     dinaikkan ke 16px: ini ambang perilakunya, bukan angka selera. */
+  input,
+  select,
+  textarea,
+  .order-field input,
+  .order-field select,
+  .order-field textarea {
+    font-size: 16px;
+  }
+
+  /* ---- 2. Sasaran sentuh ----
+     Ukuran nyaman sentuh adalah 44px. Tombol menu sebelumnya hanya 25x25,
+     padahal itu navigasi utama di layar kecil. Area sentuh diperbesar lewat
+     padding, tampilannya tetap. */
+  .nav-toggle {
+    width: 44px;
+    height: 44px;
+    margin-right: -10px;
+    padding: 9px;
+  }
+
+  .header-cta {
+    min-height: 44px;
+    padding-block: 12px;
+  }
+
+  .hero-portfolio-link,
+  .text-link,
+  .portfolio-home-link,
+  .portfolio-jump-links a,
+  .footer-links a,
+  .order-contact-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .main-nav a {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* ---- 3. Luberan horizontal ----
+     Huruf hias raksasa di bagian kontak menjorok 5px keluar layar dan
+     memunculkan geser samping. Bagian itu memang sudah position:relative,
+     jadi cukup dipotong di sana. */
+  .contact {
+    overflow: hidden;
+  }
+
+  .hero-chip {
+    max-width: 72vw;
+  }
+
+  /* ---- 4. Batas keterbacaan ----
+     Audit menemukan teks isi sampai 8px. Label kecil bertracking boleh tetap
+     mungil, tapi kalimat yang harus dibaca dinaikkan ke 12px. */
+  .service-item p,
+  .service-benefits li,
+  .why-card p,
+  .value-card li,
+  .kind-item p,
+  .process-step p,
+  .faq-item p,
+  .cost-points li,
+  .included-list li,
+  .object-card-desc {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .eyebrow,
+  .section-label,
+  .value-number,
+  .copyright,
+  .order-form-note,
+  .order-contact-footnote,
+  .object-card-meta,
+  .order-summary-label,
+  .values-intro {
+    font-size: 11px;
+  }
+
+  .social-service-photo figcaption,
+  .creative-service-photo figcaption,
+  .talent-service-photo figcaption,
+  .portfolio-count {
+    font-size: 10px;
+  }
+
+  .hero-media-caption,
+  .hero-portfolio-link,
+  .header-cta,
+  .portfolio-home-link,
+  .portfolio-jump-links a {
+    font-size: 12px;
+  }
+
+  /* ---- 5. Tombol WhatsApp ----
+     Di layar sempit tombol ini menutupi sudut kanan bawah; diperkecil sedikit
+     dan dirapatkan ke tepi agar tidak menimpa isi. */
+  .wa-float {
+    right: 14px;
+    bottom: 14px;
+    height: 52px;
+    padding: 0 13px;
+  }
+}
+
+/* ---- Penyempurnaan mobile, putaran kedua ----
+   Dari audit lanjutan: dua sasaran sentuh masih kurang beberapa piksel, dua
+   teks masih di bawah ambang baca, dan tombol WhatsApp menutupi kolom isian
+   di halaman pemesanan. */
+@media (max-width: 760px) {
+  .brand,
+  .contact-link {
+    min-height: 44px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .portfolio-card-caption p,
+  .focus-word {
+    font-size: 11px;
+  }
+
+  /* Halaman pemesanan sudah punya panel kontak admin sendiri, dan tombol
+     mengambang itu menimpa kolom "Estimasi budget" di layar sempit. Dua jalur
+     ke WhatsApp di satu layar juga berlebihan. */
+  body.order-page .wa-float {
+    display: none;
+  }
+}

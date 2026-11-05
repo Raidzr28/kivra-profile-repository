@@ -76,6 +76,32 @@ BELUM disesuaikan (perlu keputusan pemilik):
    seperti Arial Narrow, batas bawah ukuran judul kontak diturunkan dan ruang
    descender pembungkus kata dinaikkan 0.12em -> 0.24em.
 
+## Optimisasi mobile (2026-11-05 siang)
+Diaudit di 390px dan 360px, lalu diperbaiki:
+- Zoom otomatis iOS: 17 kolom isian di order.html di bawah 16px. Safari iOS
+  memperbesar halaman saat kolom di bawah 16px disentuh dan tidak
+  mengembalikannya. Semua isian dinaikkan ke 16px.
+- Sasaran sentuh: dari 9 jadi 1 di beranda, 0 di portfolio. Tombol menu
+  sebelumnya hanya 25x25 padahal itu navigasi utama mobile; kini 44x44 lewat
+  padding, tampilannya tidak berubah. Sisa satu: .hero-chip 104x36, tombol
+  kecil di dalam judul hero — memperbesarnya akan menggeser baris judul.
+- Teks terlalu kecil: dari 58 temuan jadi 0 di bawah 10px. Kalimat yang harus
+  dibaca (deskripsi layanan, benefit, FAQ) dulu 8-9px, kini 12px. Label
+  bertracking dibiarkan 11px.
+- Tombol WhatsApp menutupi kolom "Estimasi budget" di order.html. Disembunyikan
+  di halaman itu lewat body.order-page, karena halamannya sudah punya panel
+  kontak admin sendiri.
+- Logo: 1013x315 PNG 70 KB padahal tampil maksimal 170px. Dikecilkan ke 480px
+  (masih 2x untuk retina) jadi 20 KB. Versi penuh tetap ada di
+  remotion-intro/public/ untuk render video.
+- Bug yang ketahuan saat audit: thumbnail slider pertama masih menunjuk
+  shana-01-paket.jpg dan keempat aria-label-nya tidak sinkron dengan slide.
+  Sudah diselaraskan.
+Beban halaman mobile: beranda 0.69 MB, portfolio 0.67 MB, order 0.15 MB.
+Hero.mp4 6 MB TIDAK ikut terunduh karena preload=metadata.
+Luberan horizontal yang terdeteksi audit semuanya sudah terpotong induknya;
+scrollWidth tetap sama dengan lebar layar, jadi tidak ada geser samping.
+
 ## Belum selesai
 0. Nomor WhatsApp admin belum diisi (placeholder NOMOR_ADMIN di 3 halaman).
 0b. Kartu Shana di portfolio.html masih tangkapan HP. Kalau mau seragam
