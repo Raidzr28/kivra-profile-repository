@@ -5503,6 +5503,67 @@ section[id],
 }
 
 
+/* ---- Sorotan kartu visi & misi ----
+   Keduanya turun ke navy saat kursor masuk, dan teks kartu misi dibalik jadi
+   putih supaya tetap terbaca. Navy dipilih untuk keduanya karena kalau kartu
+   misi berubah jadi biru aksen, warnanya sama persis dengan kartu visi di
+   sebelahnya dan keduanya melebur jadi satu blok. Hanya pada perangkat yang
+   benar-benar punya kursor, supaya di layar sentuh keadaan sorot tidak
+   nyangkut setelah diketuk. */
+.value-card {
+  transition:
+    background 280ms ease,
+    color 280ms ease,
+    transform 460ms var(--ease-out-quart);
+}
+
+.value-card .value-number,
+.value-card h3,
+.value-card li,
+.value-card li::before,
+.value-mark {
+  transition: color 280ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .value-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .vision-card:hover {
+    background: var(--ink);
+  }
+
+  .vision-card:hover .value-mark {
+    color: rgb(96 193 229 / 45%);
+  }
+
+  .mission-card:hover {
+    background: var(--ink);
+  }
+
+  .mission-card:hover .value-number,
+  .mission-card:hover h3,
+  .mission-card:hover li {
+    color: var(--paper);
+  }
+
+  .mission-card:hover li::before {
+    color: var(--sky);
+  }
+
+  .mission-card:hover .value-mark {
+    color: rgb(96 193 229 / 45%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .value-card:hover {
+    transform: none;
+  }
+}
+
+
 /* ---- Tanda visi/misi di layar sempit ----
    Kartunya menyempit sampai ikon duduk persis di belakang judul dan
    daftar misi, jadi di bawah 1200px tanda itu disembunyikan saja. */
@@ -5563,4 +5624,79 @@ section[id],
   max-height: none;
   padding: 30% 18%;
   object-position: center;
+}
+
+
+/* ---- Judul hero diketik (motion.js initTypewriter) ----
+   Huruf memakai tag kustom <tw-char>, bukan <span>, karena aturan warna aksen
+   di berkas ini menyasar "h1 span"/"h2 span" dan span pembungkus akan ikut
+   terkena. Huruf tetap menempati ruangnya sejak awal (hanya opacity yang
+   berubah) supaya tata letak tidak bergeser saat mengetik. Keadaan akhir
+   ditulis sebagai bawaan: kalau JavaScript gagal, judul tampil utuh. */
+tw-char {
+  display: inline;
+  white-space: pre;
+}
+
+html.motion-ready .hero-headline tw-char {
+  opacity: 0;
+}
+
+html.motion-ready .hero-headline tw-char.is-typed {
+  opacity: 1;
+}
+
+tw-caret {
+  display: inline-block;
+  width: 0.055em;
+  height: 0.74em;
+  margin-left: 0.03em;
+  background: var(--accent);
+  translate: 0 0.02em;
+  vertical-align: baseline;
+}
+
+.hero-headline.is-typed tw-caret {
+  animation: tw-blink 1.05s steps(1, end) infinite;
+}
+
+@keyframes tw-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Tombol galeri di dalam baris kedua baru muncul setelah ketikan selesai,
+   dan sampai saat itu tidak bisa diklik. */
+.hero-headline .tw-late {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 420ms var(--ease-out-quart);
+}
+
+.hero-headline.is-typed .tw-late {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.motion-ready .hero-headline tw-char {
+    opacity: 1;
+  }
+
+  tw-caret {
+    display: none;
+  }
+
+  .hero-headline .tw-late {
+    opacity: 1;
+    pointer-events: auto;
+    transition: none;
+  }
 }

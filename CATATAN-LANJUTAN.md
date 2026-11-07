@@ -130,6 +130,36 @@ scrollWidth tetap sama dengan lebar layar, jadi tidak ada geser samping.
    memberi padding 12% lalu max-height 76px meremas kotak isinya jadi 15px;
    sekarang diatur lewat padding 30%/18% tanpa max-height.
 
+## Sorotan kartu visi & misi (7 Nov)
+Kedua kartu berubah jadi navy saat kursor masuk, naik 5px, dan teks kartu misi
+dibalik jadi putih (penanda daftar jadi biru laut). Navy dipakai untuk
+keduanya: kalau kartu misi diubah jadi biru aksen, warnanya sama persis dengan
+kartu visi di sebelahnya dan keduanya melebur jadi satu blok. Dibungkus
+@media (hover: hover) and (pointer: fine) supaya di layar sentuh keadaan sorot
+tidak nyangkut setelah diketuk, dan geseran 5px mati saat
+prefers-reduced-motion. Kontras teks putih di atas navy 10,9:1.
+
+## Judul hero diketik (7 Nov)
+"CREATE. CONNECT. GROW." kini muncul huruf demi huruf, 58 ms per huruf (total
+sekitar 1,2 detik), dengan kursor biru berkedip yang ikut berjalan lalu hilang
+1,8 detik setelah selesai. Dipasang di motion.js sebagai initTypewriter, CSS-nya
+di akhir style.css.
+- Tiap huruf dibungkus tag kustom <tw-char>, BUKAN <span>, dengan alasan yang
+  sama seperti <split-word>: aturan warna aksen menyasar "h1 span"/"h2 span".
+- Huruf menempati ruangnya sejak awal (hanya opacity yang berubah), jadi tata
+  letak tidak bergeser saat mengetik.
+- Aksesibilitas: h1 diberi aria-label "Create. Connect. Grow." yang dirakit
+  dari simpul teks saja, jadi label tersembunyi tombol galeri tidak ikut
+  terbaca; tiap <tw-char> ditandai aria-hidden supaya tidak dieja satu per satu.
+- Tombol galeri hero di dalam baris kedua disembunyikan dan tidak bisa diklik
+  sampai ketikan selesai, lalu memudar masuk.
+- Mulai setelah video intro ditutup: tes.html mengirim peristiwa
+  "kivra:intro-done" di dismissLoadingScreen. Ada jaring pengaman 16 detik
+  kalau peristiwa itu tidak pernah datang.
+- prefers-reduced-motion: tidak ada pemecahan huruf sama sekali, judul tampil
+  utuh seperti semula. Tanpa JavaScript juga tetap utuh karena opacity:0 hanya
+  berlaku di bawah html.motion-ready.
+
 ## Belum selesai
 0. Nomor WhatsApp admin belum diisi (placeholder NOMOR_ADMIN di 3 halaman).
 0b. Kartu Shana di portfolio.html masih tangkapan HP. Kalau mau seragam

@@ -290,6 +290,107 @@
     window.addEventListener("scroll", show, { passive: true });
   };
 
+  /* ------------------------------------------------------------------ 7
+     Judul hero diketik.
+
+     "CREATE. CONNECT. GROW." muncul huruf demi huruf dengan kursor berkedip.
+     Tiap huruf dibungkus tag kustom <tw-char> (bukan <span>) karena banyak
+     aturan CSS di berkas ini menyasar "h1 span" dan "h2 span"; span pembungkus
+     akan ikut terkena. Teks utuh tetap ada di DOM dan dipasang sebagai
+     aria-label pada h1, sedangkan tiap <tw-char> ditandai aria-hidden supaya
+     pembaca layar tidak mengejanya satu per satu. Tombol galeri di dalam baris
+     kedua tidak disentuh, hanya disembunyikan sampai pengetikan selesai.
+
+     Mulai setelah video intro ditutup, karena judulnya tertutup layar
+     pembuka. Kalau peristiwa itu tidak pernah datang (video gagal, atau
+     pengguna menutup tab lalu kembali), ada jaring pengaman 16 detik. */
+  const initTypewriter = () => {
+    const headline = document.querySelector(".hero-headline");
+    if (!headline) return;
+    const lines = Array.prototype.slice.call(headline.querySelectorAll(".hl-line"));
+    if (!lines.length) return;
+
+    // hanya simpul teks: label tersembunyi pada tombol galeri tidak ikut
+    const lineText = (line) =>
+      Array.prototype.slice
+        .call(line.childNodes)
+        .filter((node) => node.nodeType === 3)
+        .map((node) => node.textContent)
+        .join("")
+        .replace(/\s+/g, " ")
+        .trim();
+    headline.setAttribute("aria-label", lines.map(lineText).filter(Boolean).join(" "));
+
+    if (reduced.matches) return;
+
+    const cells = [];
+    lines.forEach((line) => {
+      line.removeAttribute("data-reveal");
+      line.classList.add("is-revealed");
+      Array.prototype.slice.call(line.childNodes).forEach((node) => {
+        if (node.nodeType === 3) {
+          const frag = document.createDocumentFragment();
+          Array.from(node.textContent).forEach((character) => {
+            const cell = document.createElement("tw-char");
+            cell.setAttribute("aria-hidden", "true");
+            cell.textContent = character;
+            frag.appendChild(cell);
+            cells.push(cell);
+          });
+          line.replaceChild(frag, node);
+        } else if (node.nodeType === 1) {
+          node.classList.add("tw-late");
+        }
+      });
+    });
+
+    if (!cells.length) return;
+
+    const caret = document.createElement("tw-caret");
+    caret.setAttribute("aria-hidden", "true");
+    cells[0].before(caret);
+    headline.classList.add("is-typing");
+
+    const STEP = 58;
+    let index = 0;
+    let previous = 0;
+    let started = false;
+
+    const tick = (now) => {
+      if (!previous) previous = now;
+      if (now - previous >= STEP) {
+        previous = now;
+        const cell = cells[index];
+        cell.classList.add("is-typed");
+        cell.after(caret);
+        index += 1;
+      }
+      if (index < cells.length) {
+        requestAnimationFrame(tick);
+        return;
+      }
+      headline.classList.remove("is-typing");
+      headline.classList.add("is-typed");
+      window.setTimeout(() => caret.remove(), 1800);
+    };
+
+    const begin = () => {
+      if (started) return;
+      started = true;
+      requestAnimationFrame(tick);
+    };
+
+    const loadingScreen = document.querySelector("#loading-screen");
+    if (loadingScreen && !loadingScreen.hidden) {
+      document.addEventListener("kivra:intro-done", () => window.setTimeout(begin, 240), {
+        once: true,
+      });
+      window.setTimeout(begin, 16000);
+    } else {
+      window.setTimeout(begin, 240);
+    }
+  };
+
   const start = () => {
     initPageTransition();
     initSplitText();
@@ -297,6 +398,7 @@
     initCursor();
     initLoopVideos();
     initWhatsApp();
+    initTypewriter();
   };
 
   if (document.readyState === "loading") {

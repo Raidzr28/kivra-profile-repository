@@ -711,6 +711,8 @@
         clearTimeout(loadingScreenTimeout);
         loadingVideo.pause();
         loadingScreen.classList.remove("is-visible");
+        // motion.js menunggu ini untuk mulai mengetik judul hero
+        document.dispatchEvent(new CustomEvent("kivra:intro-done"));
         window.setTimeout(() => {
           loadingScreen.hidden = true;
         }, 450);
