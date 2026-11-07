@@ -102,6 +102,34 @@ Hero.mp4 6 MB TIDAK ikut terunduh karena preload=metadata.
 Luberan horizontal yang terdeteksi audit semuanya sudah terpotong induknya;
 scrollWidth tetap sama dengan lebar layar, jadi tidak ada geser samping.
 
+## Revisi 5 poin (7 Nov)
+1. Judul hero "CREATE. CONNECT. GROW." sudah rata kiri semua (indent per baris
+   dinolkan) dan sisi kanan panggung diisi hero/hero-mockup.jpg. Di bawah
+   1100px gambar turun ke bawah judul.
+2. Tulisan mepet/terpotong:
+   - scroll-margin-top 112px (88px mobile) pada semua section ber-id, supaya
+     judul tidak tersembunyi di balik header lengket saat diklik dari menu.
+   - Lantai ukuran huruf dinaikkan: semua 8px dan 9px jadi 10px (23 aturan).
+     Audit 375-1920px sekarang nol teks di bawah 10px dan nol geser samping.
+   - Dekorasi "k." di bagian kontak tadinya #292c25 (sisa palet lama) sehingga
+     tampak seperti noda hitam di atas navy; sekarang sky 12%.
+3. Tanda kartu yang kaku sudah diganti. Dulu satu panah dan satu bintang padat
+   dipakai berulang sebagai cap raksasa; sekarang tiap kartu punya ikon garis
+   sendiri dengan ujung membulat:
+   - Keunggulan 01 penggeser setelan, 02 bohlam, 03 dua lingkaran bertemu,
+     04 tunas. Duduk sebagai lencana 44px di alur kartu, miring sedikit saat
+     disorot.
+   - Visi mata, Misi bendera; dipasang di kanan atas kartu, disembunyikan di
+     bawah 1200px karena kartunya menyempit dan ikon jatuh di belakang teks.
+   CATATAN: "emoji logo" saya artikan sebagai tanda hias kartu ini. Kalau yang
+   dimaksud logo KIVRA atau hal lain, tinggal bilang.
+4. Angka persen sudah hilang dari Intro.tsx; kedua video intro sudah dirender
+   ulang (web 72 KB, mobile 65 KB) dan sudah dicek frame per frame.
+5. Logo BuihKicks dan GoPreneur masuk ke dinding kolaborasi (kini 5 kotak,
+   --total-items ikut jadi 5). Sempat tampil sebesar bintik karena aturan lama
+   memberi padding 12% lalu max-height 76px meremas kotak isinya jadi 15px;
+   sekarang diatur lewat padding 30%/18% tanpa max-height.
+
 ## Belum selesai
 0. Nomor WhatsApp admin belum diisi (placeholder NOMOR_ADMIN di 3 halaman).
 0b. Kartu Shana di portfolio.html masih tangkapan HP. Kalau mau seragam
