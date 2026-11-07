@@ -189,7 +189,7 @@ a:focus-visible {
   height: 7px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 0 4px rgb(244 119 33 / 14%);
+  box-shadow: 0 0 0 4px rgb(55 63 253 / 14%);
 }
 
 .hero h1,
@@ -309,7 +309,7 @@ a:focus-visible {
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: inset -22px -25px 0 rgba(32, 34, 30, 0.08), 0 20px 80px rgba(87, 104, 41, 0.13);
+  box-shadow: inset -22px -25px 0 rgba(27, 54, 93, 0.09), 0 20px 80px rgba(87, 104, 41, 0.13);
   transform: translate(-50%, -50%);
   animation: circle-breathe 7s ease-in-out infinite;
 }
@@ -663,7 +663,7 @@ a:focus-visible {
   bottom: -37px;
   width: 120px;
   height: 120px;
-  color: rgb(244 119 33 / 9%);
+  color: rgb(55 63 253 / 10%);
 }
 
 .why-mark svg,
@@ -778,7 +778,7 @@ a:focus-visible {
   bottom: -39px;
   width: 220px;
   height: 220px;
-  color: rgba(32, 34, 30, 0.08);
+  color: rgba(27, 54, 93, 0.09);
 }
 
 .project-grid {
@@ -826,7 +826,7 @@ a:focus-visible {
   border: 1px solid rgba(72, 54, 35, 0.42);
   border-radius: 48% 48% 44% 44%;
   background: radial-gradient(ellipse at 38% 30%, #ffc078 0 10%, transparent 11%), radial-gradient(ellipse at 61% 51%, #bd530d 0 11%, transparent 12%), #f47721;
-  box-shadow: inset -17px -18px 0 rgb(72 54 35 / 10%), 16px 20px 20px rgb(104 58 37 / 12%);
+  box-shadow: inset -17px -18px 0 rgb(72 54 35 / 10%), 16px 20px 20px rgb(27 54 93 / 12%);
   transform: rotate(-18deg);
 }
 
@@ -1690,7 +1690,7 @@ a:focus-visible {
 .order-field select:focus,
 .order-field textarea:focus {
   border-color: var(--accent);
-  outline: 2px solid rgb(244 119 33 / 18%);
+  outline: 2px solid rgb(55 63 253 / 18%);
   outline-offset: 1px;
 }
 
@@ -5418,4 +5418,85 @@ split-word-inner {
   body.order-page .wa-float {
     display: none;
   }
+}
+
+
+/* ---- Jarak aman untuk lompatan anchor ----
+   Header menempel setinggi 92px. Tanpa ini, mengeklik tautan nav membuat
+   judul bagian berhenti TEPAT di bawah tepi atas layar, sehingga tertutup
+   header dan terlihat terpotong. */
+section[id],
+[id^="step-"] {
+  scroll-margin-top: 112px;
+}
+
+@media (max-width: 760px) {
+  section[id],
+  [id^="step-"] {
+    scroll-margin-top: 88px;
+  }
+}
+
+/* ---- Kartu visi: teks di atas biru ----
+   Latarnya var(--accent) sementara warna tulisan mewarisi navy, jadi
+   kontrasnya hanya 1,9 dan nyaris tak terbaca. */
+.vision-card,
+.vision-card h3,
+.vision-card .value-number {
+  color: var(--paper);
+}
+
+.vision-card .value-mark {
+  color: rgb(255 255 255 / 16%);
+}
+
+
+/* ---- Mockup di sisi kanan hero ----
+   Sisi kanan panggung hero sebelumnya kosong. Judul kini rata kiri semua,
+   jadi ruang itu diisi tampilan situs di laptop dan ponsel. Ikut memudar
+   bersama panggung saat galeri scroll terbuka, karena induknya yang
+   menurunkan opacity. */
+.hero-shot {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: 0;
+  width: min(46%, 620px);
+  margin: 0;
+  transform: translateY(-46%);
+  pointer-events: none;
+}
+
+.hero-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Di bawah 1100px judul memakai hampir seluruh lebar, jadi mockup turun ke
+   bawah teks agar keduanya tidak saling menindih. */
+@media (max-width: 1099px) {
+  .hero-shot {
+    position: static;
+    width: min(100%, 520px);
+    margin-top: 28px;
+    transform: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-shot {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+
+/* ---- Batas tinggi logo klien ----
+   Aturan .collab-tile-media img yang sudah ada memakai height:100%; tanpa
+   batas, logo bujur sangkar BuihKicks membuat kotaknya jauh lebih tinggi dari
+   kotak bertanda teks di sebelahnya. */
+.collab-wall .collab-tile-media img {
+  max-height: 76px;
+  object-position: center;
 }

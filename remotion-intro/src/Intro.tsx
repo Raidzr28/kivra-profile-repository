@@ -5,7 +5,7 @@ import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, useVideoCo
  * KIVRA Digital intro / loading sequence.
  *
  * Structure ported from the loader observed on fromanother.love: a greeting
- * line, a 0->100 percentage counter, and a full-bleed wipe-out once it lands.
+ * line and a full-bleed wipe-out once it lands.
  * Palette and wordmark are KIVRA Digital's own, sampled from the brand logo
  * (ink #111111, accent #323AFD); none of the reference's brand values, type or
  * assets are reused. See docs/REFERENCE_AUDIT.md §8.
@@ -24,14 +24,8 @@ export const Intro: React.FC<{ portrait?: boolean }> = ({ portrait = false }) =>
   const frame = useCurrentFrame();
   const { durationInFrames, width, height } = useVideoConfig();
 
-  // percentage runs over the first 75% of the clip, then holds at 100
+  // garis aksen memanjang selama 75% pertama klip, lalu diam
   const loadEnd = Math.round(durationInFrames * 0.75);
-  const percent = Math.round(
-    interpolate(frame, [0, loadEnd], [0, 100], {
-      extrapolateRight: "clamp",
-      easing: easeOutQuart,
-    }),
-  );
 
   // wordmark resolves out of the reference's blur idiom
   const markBlur = interpolate(frame, [6, 34], [14, 0], {
@@ -143,19 +137,11 @@ export const Intro: React.FC<{ portrait?: boolean }> = ({ portrait = false }) =>
           alignItems: "flex-end",
         }}
       >
-        <div
-          style={{
-            flex: 1,
-            color: INK,
-            fontSize: (portrait ? 72 : 96) * unit,
-            fontWeight: 700,
-            letterSpacing: "-0.02em",
-            lineHeight: 1,
-          }}
-        >
-          {percent}
-          <span style={{ color: ACCENT }}>%</span>
-        </div>
+        {/* Penghitung persen dihapus: intro ini bukan progress bar yang
+            sungguhan memuat apa pun, jadi angka yang berjalan justru
+            menjanjikan sesuatu yang tidak ada. Sudut kiri dibiarkan kosong
+            agar label di kanan punya ruang. */}
+        <div style={{ flex: 1 }} />
         <div
           style={{
             color: MUTED,
