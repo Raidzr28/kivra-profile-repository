@@ -160,6 +160,31 @@ di akhir style.css.
   utuh seperti semula. Tanpa JavaScript juga tetap utuh karena opacity:0 hanya
   berlaku di bawah html.motion-ready.
 
+## "Cara kerja" sebagai cerita digerakkan scroll (7 Nov)
+Garis 2px di atas tiap langkah dipakai ulang jadi bilah kemajuan ala IG/WA
+story. Yang mengisinya posisi scroll, bukan pewaktu: bagiannya dipaku (sticky)
+selama 226svh dan tiap langkah mendapat satu potong perjalanan itu, jadi
+pelanggan tidak bisa melewati prosesnya tanpa melihatnya.
+- Lebar bilah dibaca dari --fill yang diisi skrip tanpa transisi, supaya
+  menempel pada gerakan roda dan ikut mundur saat digulir balik.
+- Faktor (jumlah langkah + 0,5): keempat bilah penuh pada 89% perjalanan, jadi
+  ada jeda membaca langkah terakhir sebelum pakunya lepas.
+- Celah antar bilah tidak perlu dibuat baru: ::after lama (penyambung 26px
+  berwarna --line) digambar di atas bilah, jadi segmennya otomatis terpisah.
+- Isi tiap langkah masuk dari bawah saat bilahnya mulai jalan — nomor, judul,
+  lalu kalimatnya, beruntun 70 ms. Langkah pertama sudah terbuka sejak bagian
+  ini terlihat supaya tidak sempat terlihat kolom kosong.
+- Memaku hanya dipakai kalau seluruh isi bagian muat dalam satu layar
+  (section.offsetHeight + 40 <= innerHeight). Di layar sempit tingginya ~1195px
+  sedangkan layar 844px, jadi di sana jatuh ke mode .is-flow: tiap langkah
+  muncul sendiri saat masuk layar, dan bilahnya diberi transisi 760 ms karena
+  --fill melompat 0 ke 1.
+- Teks tidak pernah diredupkan, hanya belum masuk lalu tetap penuh. Meredupkan
+  langkah yang tidak aktif akan membuat --muted di atas putih gagal kontras.
+- Semua kelas penyembunyi bergantung pada .is-story yang dipasang skrip, jadi
+  tanpa JavaScript atau saat prefers-reduced-motion bagian ini tampil utuh dan
+  tidak dipaku.
+
 ## Belum selesai
 0. Nomor WhatsApp admin belum diisi (placeholder NOMOR_ADMIN di 3 halaman).
 0b. Kartu Shana di portfolio.html masih tangkapan HP. Kalau mau seragam

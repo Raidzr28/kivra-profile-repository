@@ -391,6 +391,98 @@
     }
   };
 
+  /* ------------------------------------------------------------------ 8
+     Tahap "Cara kerja" sebagai cerita yang digerakkan scroll.
+
+     Garis 2px di atas tiap langkah dipakai ulang jadi bilah kemajuan ala
+     IG/WA story. Yang mengisinya bukan pewaktu melainkan posisi scroll:
+     bagian ini dipaku (sticky) selama beberapa layar, dan tiap langkah
+     mendapat satu potong dari perjalanan itu. Jadi pelanggan tidak bisa
+     melewati prosesnya tanpa melihatnya, dan karena nilainya diturunkan dari
+     posisi scroll, menggulir balik ikut memutar mundur bilahnya dengan pas.
+
+     Memaku hanya masuk akal kalau seluruh isi bagian ini muat dalam satu
+     layar. Di layar sempit tingginya hampir 1200px, jadi di sana dipakai cara
+     kedua: tiap langkah muncul sendiri saat masuk layar.
+
+     Semua kelas penyembunyi bergantung pada .is-story yang dipasang skrip
+     ini, jadi tanpa JavaScript atau saat prefers-reduced-motion bagian ini
+     tampil utuh seperti semula. */
+  const initProcessStory = () => {
+    const section = document.querySelector(".process");
+    const list = section && section.querySelector(".process-list");
+    if (!section || !list || reduced.matches) return;
+
+    const steps = Array.prototype.slice.call(list.querySelectorAll(".process-step"));
+    if (steps.length < 2) return;
+
+    const clamp = (value) => (value < 0 ? 0 : value > 1 ? 1 : value);
+    list.classList.add("is-story");
+
+    const paint = (step, fill, open) => {
+      step.style.setProperty("--fill", fill);
+      step.classList.toggle("is-open", open);
+      step.classList.toggle("is-done", fill >= 1);
+    };
+
+    /* ---- cara 1: dipaku, bilah mengikuti scroll ---- */
+    const pinned = () => {
+      const pin = document.createElement("div");
+      pin.className = "process-pin";
+      while (section.firstChild) pin.appendChild(section.firstChild);
+      section.appendChild(pin);
+      section.classList.add("is-pinned");
+      section.style.setProperty("--story-steps", steps.length);
+
+      let queued = false;
+      const update = () => {
+        queued = false;
+        const rect = section.getBoundingClientRect();
+        const travel = section.offsetHeight - window.innerHeight;
+        const progress = travel > 0 ? clamp(-rect.top / travel) : rect.top < 0 ? 1 : 0;
+        // +0.5: keempat bilah sudah penuh sebelum pakunya lepas, jadi ada
+        // jeda untuk membaca langkah terakhir sebelum bagian ini bergulir
+        const scaled = progress * (steps.length + 0.5);
+        steps.forEach((step, i) => {
+          const fill = clamp(scaled - i);
+          // langkah pertama sudah terbuka sejak bagian ini terlihat, supaya
+          // pengguna tidak sempat melihat kolom kosong saat mendekatinya
+          paint(step, fill, i === 0 || fill > 0);
+        });
+      };
+
+      const onScroll = () => {
+        if (queued) return;
+        queued = true;
+        requestAnimationFrame(update);
+      };
+
+      update();
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll, { passive: true });
+    };
+
+    /* ---- cara 2: tanpa paku, tiap langkah muncul saat masuk layar ---- */
+    const flowing = () => {
+      list.classList.add("is-flow");
+      steps.forEach((step) => {
+        paint(step, 0, false);
+        onScreen(
+          step,
+          () => paint(step, 1, true),
+          { rootMargin: "0px 0px -18% 0px", threshold: 0.2 },
+        );
+      });
+      // jaring pengaman: teks tidak boleh tetap tersembunyi
+      window.setTimeout(() => steps.forEach((step) => paint(step, 1, true)), 30000);
+    };
+
+    const choose = () => section.offsetHeight + 40 <= window.innerHeight;
+
+    if (choose()) pinned();
+    else flowing();
+  };
+
   const start = () => {
     initPageTransition();
     initSplitText();
@@ -399,6 +491,7 @@
     initLoopVideos();
     initWhatsApp();
     initTypewriter();
+    initProcessStory();
   };
 
   if (document.readyState === "loading") {

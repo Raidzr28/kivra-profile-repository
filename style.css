@@ -5700,3 +5700,97 @@ tw-caret {
     transition: none;
   }
 }
+
+
+/* ---- "Cara kerja" sebagai cerita digerakkan scroll (initProcessStory) ----
+   Garis 2px di atas tiap langkah dipakai ulang jadi bilah kemajuan ala IG
+   atau WhatsApp story. ::after yang lama (penyambung 26px berwarna --line)
+   dibiarkan dan digambar di atas bilah, jadi bilahnya otomatis tampak
+   tersegmen dengan celah di antaranya.
+
+   Lebar bilah dibaca dari --fill yang diisi skrip dari posisi scroll, tanpa
+   transisi, supaya bilahnya menempel pada gerakan roda dan ikut mundur saat
+   digulir balik. Pada mode .is-flow (layar sempit, bagian ini tidak dipaku)
+   --fill melompat 0 ke 1, jadi di sana justru diberi transisi.
+
+   Semua aturan di sini bergantung pada .is-story yang dipasang skrip. Tanpa
+   JavaScript, atau saat pengguna meminta gerakan dikurangi, kelas itu tidak
+   pernah ada sehingga bagian ini tampil utuh seperti semula. */
+.process.is-pinned {
+  height: calc(100svh + (var(--story-steps, 4) - 1) * 42svh);
+  padding-block: 0;
+}
+
+.process.is-pinned .process-pin {
+  position: sticky;
+  top: 0;
+  display: flex;
+  min-height: 100svh;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: 90px 100px;
+}
+
+.process-list.is-story .process-step {
+  border-top-color: var(--line);
+}
+
+.process-list.is-story .process-step::before {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: calc(var(--fill, 0) * 100%);
+  height: 2px;
+  background: var(--accent);
+  content: "";
+}
+
+.process-list.is-story.is-flow .process-step::before {
+  transition: width 760ms var(--ease-out-quart);
+}
+
+html.motion-ready .process-list.is-story .process-step > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 520ms var(--ease-out-quart),
+    transform 640ms var(--ease-out-quart);
+}
+
+/* nomor, judul, lalu kalimatnya — masuk beruntun, bukan serempak */
+html.motion-ready .process-list.is-story .process-step > *:nth-child(2) {
+  transition-delay: 70ms;
+}
+
+html.motion-ready .process-list.is-story .process-step > *:nth-child(3) {
+  transition-delay: 140ms;
+}
+
+html.motion-ready .process-list.is-story .process-step.is-open > * {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .process.is-pinned {
+    height: auto;
+    padding-block: 90px 100px;
+  }
+
+  .process.is-pinned .process-pin {
+    position: static;
+    min-height: 0;
+    padding-block: 0;
+  }
+
+  html.motion-ready .process-list.is-story .process-step > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .process-list.is-story .process-step::before {
+    width: 100%;
+    transition: none;
+  }
+}
