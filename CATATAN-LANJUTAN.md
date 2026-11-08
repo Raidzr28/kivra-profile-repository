@@ -185,6 +185,57 @@ pelanggan tidak bisa melewati prosesnya tanpa melihatnya.
   tanpa JavaScript atau saat prefers-reduced-motion bagian ini tampil utuh dan
   tidak dipaku.
 
+## Optimalisasi Android & iOS (7 Nov malam)
+Diaudit dengan emulasi perangkat Playwright: iPhone SE/13/14 Pro Max, Pixel 7,
+Galaxy S5/S9+/Tab S4, pada tes.html, order.html, dan portfolio.html.
+
+1. SOROT YANG NYANGKUT DI LAYAR SENTUH. 51 aturan :hover tidak berpenjaga; di
+   ponsel keadaan sorot menempel setelah diketuk sampai pengguna mengetuk
+   tempat lain. 39 aturan dibungkus @media (hover: hover) and (pointer: fine),
+   3 di antaranya dipecah dulu karena daftar selektornya mencampur :hover
+   dengan :focus-visible — kalau ikut dibungkus, fokus papan ketik akan mati.
+   Skripnya ada di ~/kivra-tools/hovergate.py (pemindai kedalaman kurung, bukan
+   regex). Diverifikasi dengan membandingkan computed style seluruh elemen
+   sebelum dan sesudah pada 3 halaman x 3 lebar: hanya beda derau animasi.
+   Uji perilaku: ketuk .why-card di Pixel 7 tidak lagi meninggalkan warna
+   sorot, sementara hover di desktop tetap bekerja.
+2. -webkit-text-size-adjust: 100% pada html. Tanpa ini Safari iOS membesarkan
+   teks sendiri saat layar diputar ke lanskap. Mencubit untuk memperbesar
+   tetap bisa.
+3. .showcase-pin memakai height: 100vh. Di Safari iOS 100vh adalah viewport
+   TERBESAR (bilah alamat tersembunyi), jadi isinya tertutup bilah alamat saat
+   bilah itu muncul. Diganti 100svh, yang selalu yang terkecil. Satu-satunya
+   100vh yang tersisa di berkas; 20 tempat lain sudah pakai svh.
+4. Tombol galeri di judul hero hanya 104x36, di bawah batas ketuk 44px.
+   Ukurannya tidak dinaikkan karena duduk sebaris dengan judul dan akan
+   mendorong tinggi barisnya; wilayah ketuknya diperlebar lewat ::after
+   44x44 pada @media (pointer: coarse).
+5. UKURAN HURUF. Di ponsel ada 54 elemen di bawah 12px, termasuk tautan footer
+   dan keterangan gambar di 10px. Sekarang: kalimat pengantar 13px, tautan
+   kontak 15px, tautan footer 13px, label mikro minimum 11px. Tiga label
+   (.service-item > span:first-child, .service-benefits > span, .contact
+   .eyebrow) harus disebut dengan bentuk selektor yang sama persis karena
+   aturan lamanya lebih spesifik. Batas media 900px, bukan 700px, supaya
+   Galaxy Tab (712px) dan iPad potret (834px) ikut.
+6. MOCKUP HERO MENINDIH BARIS KAKI. .hero-v2-pin dikunci height 100svh dengan
+   overflow hidden dan baris kaki diposisikan absolut di dasarnya, sedangkan
+   mockup ikut alur normal. Di iPhone SE tumpang tindihnya 75px, Galaxy S9+
+   47px, iPhone 13 21px. Padding atas panggung dipangkas dari 17vh ke 8vh
+   (sebelumnya menyisakan 199px kosong di atas judul), dan mockup hanya
+   ditampilkan kalau layarnya cukup tinggi: @media (max-width: 760px) and
+   (min-height: 730px), dibatasi 22svh. Di bawah itu disembunyikan. Diukur
+   ulang di enam ponsel: tumpang tindih nol di semuanya.
+
+BELUM DIUJI DI SAFARI SUNGGUHAN. WebKit tidak bisa dipasang di lingkungan ini
+(unduhan browser dan registry npm diblokir), jadi emulasi iPhone berjalan di
+mesin Chromium. Yang khas iOS di atas (100vh, text-size-adjust, sorot nyangkut,
+sasaran ketuk) ditemukan lewat pembacaan kode, bukan uji Safari. Perlu dicoba
+sekali di iPhone sungguhan.
+
+Hasil akhir audit: nol geser samping, nol teks di bawah 11px, nol input di
+bawah 16px (iOS tidak akan memperbesar sendiri saat formulir disentuh), nol
+error JavaScript. Bobot halaman 0,90 / 0,68 / 0,17 MB.
+
 ## Belum selesai
 0. Nomor WhatsApp admin belum diisi (placeholder NOMOR_ADMIN di 3 halaman).
 0b. Kartu Shana di portfolio.html masih tangkapan HP. Kalau mau seragam

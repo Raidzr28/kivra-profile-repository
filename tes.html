@@ -410,70 +410,67 @@
         </ol>
       </section>
 
-      <section class="showcase section-wrap" id="karya" data-cursor="Lihat karya" style="--showcase-count: 5; --showcase-step: 55vh">
-        <div class="showcase-pin">
+      <section class="showcase section-wrap" id="karya" data-cursor="Klik kartu" data-mode="curve" style="--active: 1; --count: 5">
+        <div class="showcase-frame">
           <div class="showcase-head">
             <p class="eyebrow section-label">07 / Karya pilihan</p>
-            <p class="showcase-counter"><span class="showcase-counter-now">01</span><span class="showcase-counter-sep">/</span><span class="showcase-counter-total">5</span></p>
+            <button type="button" class="showcase-mode-btn" hidden>BACK TO HOME</button>
+            <p class="showcase-counter"><span class="showcase-counter-now">02</span><span class="showcase-counter-sep">/</span><span class="showcase-counter-total">05</span></p>
           </div>
 
-          <ol class="showcase-indicator" aria-label="Daftar karya pilihan">
-          <li><button type="button" class="showcase-dot is-active" data-index="0" aria-label="Lihat karya 01: Ide besar, ruang tanpa batas"><span class="showcase-dot-num">01</span><span class="showcase-dot-label">Ide besar, ruang tanpa batas</span></button></li>
-          <li><button type="button" class="showcase-dot" data-index="1" aria-label="Lihat karya 02: Shana Studio · Pilih paket"><span class="showcase-dot-num">02</span><span class="showcase-dot-label">Beranda</span></button></li>
-          <li><button type="button" class="showcase-dot" data-index="2" aria-label="Lihat karya 03: Shana Studio · Jadwal & lokasi"><span class="showcase-dot-num">03</span><span class="showcase-dot-label">Alur pemesanan</span></button></li>
-          <li><button type="button" class="showcase-dot" data-index="3" aria-label="Lihat karya 04: Shana Studio · Ringkasan pesanan"><span class="showcase-dot-num">04</span><span class="showcase-dot-label">Galeri karya</span></button></li>
-          <li><button type="button" class="showcase-dot" data-index="4" aria-label="Lihat karya 05: Shana Studio · Asisten chat"><span class="showcase-dot-num">05</span><span class="showcase-dot-label">Asisten chat</span></button></li>
+          <div class="showcase-viewport" tabindex="0" role="region" aria-label="Galeri interaktif karya pilihan">
+            <p class="showcase-vtitle" aria-live="polite"><span class="showcase-vtitle-text">SHANA BERANDA</span></p>
+
+            <div class="showcase-track">
+              <article class="showcase-card" data-index="0" data-title="IDE BESAR" style="--i: 0; --card-bg: url('foto%20portofolio/web%20porto/shana-desktop-01-beranda.jpg')" aria-hidden="true">
+                <figure class="showcase-media">
+                  <video class="showcase-video" muted playsinline loop preload="metadata" poster="foto%20portofolio/web%20porto/shana-desktop-01-beranda.jpg" aria-label="Video visual KIVRA">
+                    <source src="foto%20portofolio/Hero/Hero.mp4" type="video/mp4" />
+                  </video>
+                </figure>
+                <p class="showcase-cat"><span class="showcase-cat-num">01</span>Motion loop · Showreel</p>
+              </article>
+
+              <article class="showcase-card is-active" data-index="1" data-title="SHANA BERANDA" style="--i: 1; --card-bg: url('foto%20portofolio/web%20porto/shana-desktop-02-paket.jpg')" aria-hidden="false">
+                <figure class="showcase-media">
+                  <img src="foto%20portofolio/web%20porto/shana-desktop-01-beranda.jpg" alt="Beranda Shana Studio di layar laptop: judul, ringkasan angka, dan foto karya" loading="lazy" decoding="async" />
+                </figure>
+                <p class="showcase-cat"><span class="showcase-cat-num">02</span>Shana Studio · Tampilan desktop</p>
+              </article>
+
+              <article class="showcase-card" data-index="2" data-title="ALUR PESANAN" style="--i: 2; --card-bg: url('foto%20portofolio/web%20porto/shana-desktop-03-karya.jpg')" aria-hidden="true">
+                <figure class="showcase-media">
+                  <img src="foto%20portofolio/web%20porto/shana-desktop-02-paket.jpg" alt="Halaman pemesanan Shana Studio di layar laptop: daftar paket dengan foto, durasi, dan harga" loading="lazy" decoding="async" />
+                </figure>
+                <p class="showcase-cat"><span class="showcase-cat-num">03</span>Shana Studio · Alur pemesanan</p>
+              </article>
+
+              <article class="showcase-card" data-index="3" data-title="GALERI KARYA" style="--i: 3; --card-bg: url('foto%20portofolio/web%20porto/shana-desktop-04-asisten.jpg')" aria-hidden="true">
+                <figure class="showcase-media">
+                  <img src="foto%20portofolio/web%20porto/shana-desktop-03-karya.jpg" alt="Galeri Selected work Shana Studio di layar laptop: tujuh karya dengan kategori dan harga" loading="lazy" decoding="async" />
+                </figure>
+                <p class="showcase-cat"><span class="showcase-cat-num">04</span>Shana Studio · Galeri karya</p>
+              </article>
+
+              <article class="showcase-card" data-index="4" data-title="ASISTEN CHAT" style="--i: 4; --card-bg: url('foto%20portofolio/web%20porto/shana-desktop-01-beranda.jpg')" aria-hidden="true">
+                <figure class="showcase-media">
+                  <img src="foto%20portofolio/web%20porto/shana-desktop-04-asisten.jpg" alt="Panel asisten chat Shana Studio terbuka di atas halaman pemesanan" loading="lazy" decoding="async" />
+                </figure>
+                <p class="showcase-cat"><span class="showcase-cat-num">05</span>Shana Studio · Asisten chat</p>
+              </article>
+            </div>
+
+            <span class="showcase-side-tag" aria-hidden="true">@kivradigital</span>
+            <span class="showcase-shutter" aria-hidden="true"></span>
+          </div>
+
+          <ol class="showcase-ticker" aria-label="Daftar karya pilihan">
+            <li><button type="button" class="showcase-tick" data-index="0">IDE BESAR</button></li>
+            <li><button type="button" class="showcase-tick is-active" data-index="1">SHANA BERANDA</button></li>
+            <li><button type="button" class="showcase-tick" data-index="2">ALUR PESANAN</button></li>
+            <li><button type="button" class="showcase-tick" data-index="3">GALERI KARYA</button></li>
+            <li><button type="button" class="showcase-tick" data-index="4">ASISTEN CHAT</button></li>
           </ol>
-
-          <div class="showcase-stage">
-        <article class="showcase-slide is-active" data-theme="light" aria-hidden="false">
-          <h3 class="showcase-title">Ide besar, ruang tanpa batas</h3>
-          <figure class="showcase-media">
-            <video class="showcase-video" muted playsinline loop preload="metadata" aria-label="Video visual KIVRA">
-              <source src="foto%20portofolio/Hero/Hero.mp4" type="video/mp4" />
-            </video>
-          </figure>
-          <p class="showcase-cat"><span class="showcase-cat-num">01</span>Motion loop · Showreel</p>
-        </article>
-        <article class="showcase-slide" data-theme="light" aria-hidden="true">
-          <h3 class="showcase-title">Shana Studio</h3>
-          <figure class="showcase-media is-wide">
-            <img src="foto%20portofolio/web%20porto/shana-desktop-01-beranda.jpg" alt="Beranda Shana Studio di layar laptop: judul, ringkasan angka, dan foto karya" loading="lazy" decoding="async" />
-          </figure>
-          <p class="showcase-cat"><span class="showcase-cat-num">02</span>Web app · Tampilan desktop</p>
-        </article>
-        <article class="showcase-slide" data-theme="light" aria-hidden="true">
-          <h3 class="showcase-title">Shana Studio</h3>
-          <figure class="showcase-media">
-            <img src="foto%20portofolio/web%20porto/shana-desktop-02-paket.jpg" alt="Halaman pemesanan Shana Studio di layar laptop: daftar paket dengan foto, durasi, dan harga" loading="lazy" decoding="async" />
-          </figure>
-          <p class="showcase-cat"><span class="showcase-cat-num">03</span>Web app · Alur pemesanan</p>
-        </article>
-        <article class="showcase-slide" data-theme="light" aria-hidden="true">
-          <h3 class="showcase-title">Shana Studio</h3>
-          <figure class="showcase-media">
-            <img src="foto%20portofolio/web%20porto/shana-desktop-03-karya.jpg" alt="Galeri Selected work Shana Studio di layar laptop: tujuh karya dengan kategori dan harga" loading="lazy" decoding="async" />
-          </figure>
-          <p class="showcase-cat"><span class="showcase-cat-num">04</span>Web app · Galeri karya</p>
-        </article>
-        <article class="showcase-slide" data-theme="light" aria-hidden="true">
-          <h3 class="showcase-title">Shana Studio</h3>
-          <figure class="showcase-media">
-            <img src="foto%20portofolio/web%20porto/shana-desktop-04-asisten.jpg" alt="Panel asisten chat Shana Studio terbuka di atas halaman pemesanan" loading="lazy" decoding="async" />
-          </figure>
-          <p class="showcase-cat"><span class="showcase-cat-num">05</span>Web app · Asisten chat</p>
-        </article>
-          </div>
-
-          <div class="showcase-rail" aria-label="Pintasan karya">
-          <button type="button" class="showcase-thumb is-active" data-index="0" aria-label="Lihat karya 01: Ide besar, ruang tanpa batas"><span class="showcase-thumb-video" aria-hidden="true">▶</span></button>
-          <button type="button" class="showcase-thumb" data-index="1" aria-label="Lihat karya 02: Beranda"><img src="foto%20portofolio/web%20porto/shana-desktop-01-beranda.jpg" alt="" loading="lazy" decoding="async" /></button>
-          <button type="button" class="showcase-thumb" data-index="2" aria-label="Lihat karya 03: Alur pemesanan"><img src="foto%20portofolio/web%20porto/shana-desktop-02-paket.jpg" alt="" loading="lazy" decoding="async" /></button>
-          <button type="button" class="showcase-thumb" data-index="3" aria-label="Lihat karya 04: Galeri karya"><img src="foto%20portofolio/web%20porto/shana-desktop-03-karya.jpg" alt="" loading="lazy" decoding="async" /></button>
-          <button type="button" class="showcase-thumb" data-index="4" aria-label="Lihat karya 05: Asisten chat"><img src="foto%20portofolio/web%20porto/shana-desktop-04-asisten.jpg" alt="" loading="lazy" decoding="async" /></button>
-          </div>
-
-          <div class="showcase-progress" aria-hidden="true"><span class="showcase-progress-bar"></span></div>
         </div>
       </section>
 
@@ -744,30 +741,29 @@
         loadingVideo.load();
       }
 
-      /* ---- Karya pilihan: pinned scroll-scrubbed showcase ---- */
+      /* ---- Karya pilihan: 3-state curved gallery (docs/PINTEREST_FEATURE_AUDIT.md) ---- */
       const showcase = document.querySelector(".showcase");
 
-      if (showcase && !reducedMotion) {
-        const stage = showcase.querySelector(".showcase-stage");
-        const slides = [...showcase.querySelectorAll(".showcase-slide")];
-        const dots = [...showcase.querySelectorAll(".showcase-dot")];
-        const thumbs = [...showcase.querySelectorAll(".showcase-thumb")];
-        const progressBar = showcase.querySelector(".showcase-progress-bar");
+      if (showcase) {
+        const viewport = showcase.querySelector(".showcase-viewport");
+        const cards = [...showcase.querySelectorAll(".showcase-card")];
+        const ticks = [...showcase.querySelectorAll(".showcase-tick")];
+        const vtitleText = showcase.querySelector(".showcase-vtitle-text");
+        const modeBtn = showcase.querySelector(".showcase-mode-btn");
         const counterNow = showcase.querySelector(".showcase-counter-now");
-        const count = slides.length;
+        const count = cards.length;
 
-        let current = -1;
-        let ticking = false;
-        let stageVisible = true;
+        let current = 1;
+        let stageVisible = false;
+        let wheelLock = false;
+        let dragStartX = null;
 
         const pad = (n) => String(n + 1).padStart(2, "0");
 
-        // Playback depends on BOTH the active slide and whether the stage is on
-        // screen, so it must be re-applied whenever either of them changes.
         const syncVideos = () => {
-          const allowed = !document.body.classList.contains("motion-paused");
-          slides.forEach((slide, i) => {
-            const video = slide.querySelector("video");
+          const allowed = !reducedMotion && !document.body.classList.contains("motion-paused");
+          cards.forEach((card, i) => {
+            const video = card.querySelector("video");
             if (!video) return;
             if (i === current && stageVisible && allowed) {
               video.play().catch(() => {});
@@ -777,82 +773,114 @@
           });
         };
 
-        const setActive = (index) => {
-          if (index === current) return;
-          current = index;
+        const setMode = (nextMode) => {
+          const prevMode = showcase.dataset.mode;
+          if (prevMode === nextMode) return;
+          if (prevMode === "detail" && nextMode === "curve" && !reducedMotion) {
+            showcase.classList.add("is-shuttering");
+            window.setTimeout(() => showcase.classList.remove("is-shuttering"), 520);
+          }
+          showcase.dataset.mode = nextMode;
+          if (modeBtn) {
+            modeBtn.hidden = nextMode === "curve";
+            modeBtn.textContent = nextMode === "zoom" ? "CLOSE IMAGE" : "BACK TO HOME";
+          }
+        };
 
-          slides.forEach((slide, i) => {
-            const on = i === index;
-            slide.classList.toggle("is-active", on);
-            slide.setAttribute("aria-hidden", String(!on));
+        const setActive = (index) => {
+          const next = Math.max(0, Math.min(index, count - 1));
+          current = next;
+          showcase.style.setProperty("--active", String(next));
+
+          cards.forEach((card, i) => {
+            const on = i === next;
+            card.classList.toggle("is-active", on);
+            card.classList.toggle("is-prev", i === next - 1);
+            card.classList.toggle("is-next", i === next + 1);
+            card.setAttribute("aria-hidden", String(!on));
           });
 
+          ticks.forEach((tick, i) => tick.classList.toggle("is-active", i === next));
+          if (vtitleText && cards[next]) vtitleText.textContent = cards[next].dataset.title || "";
+          if (counterNow) counterNow.textContent = pad(next);
           syncVideos();
-
-          dots.forEach((dot, i) => dot.classList.toggle("is-active", i === index));
-          thumbs.forEach((thumb, i) => thumb.classList.toggle("is-active", i === index));
-          showcase.classList.toggle("is-dark", slides[index].dataset.theme === "dark");
-          if (counterNow) counterNow.textContent = pad(index);
         };
 
-        const update = () => {
-          ticking = false;
-          const top = showcase.offsetTop;
-          const travel = showcase.offsetHeight - window.innerHeight;
-          // unpinned below 900px — nothing to scrub, just seed the first slide
-          if (travel <= 0) {
-            if (current < 0) setActive(0);
-            return;
-          }
-
-          const progress = Math.min(Math.max((window.scrollY - top) / travel, 0), 1);
-          if (progressBar) progressBar.style.transform = `scaleX(${progress})`;
-          setActive(Math.min(Math.floor(progress * count), count - 1));
-        };
-
-        const onScroll = () => {
-          if (ticking) return;
-          ticking = true;
-          requestAnimationFrame(update);
-        };
-
-        const jumpTo = (index) => {
-          const travel = showcase.offsetHeight - window.innerHeight;
-          // unpinned: the dots/thumbs select the slide directly instead of
-          // scrolling the page to the position that would have selected it
-          if (travel <= 0) {
-            setActive(index);
-            if (thumbs[index]) {
-              thumbs[index].scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
+        cards.forEach((card, i) => {
+          card.addEventListener("click", () => {
+            if (i !== current) {
+              if (showcase.dataset.mode === "zoom") setMode("detail");
+              setActive(i);
+              return;
             }
-            return;
-          }
-          const y = showcase.offsetTop + ((index + 0.5) / count) * travel;
-          window.scrollTo({ top: y, behavior: "smooth" });
-        };
+            const mode = showcase.dataset.mode;
+            if (mode === "curve") setMode("detail");
+            else if (mode === "detail") setMode("zoom");
+            else setMode("detail");
+          });
+        });
 
-        [...dots, ...thumbs].forEach((control) => {
-          control.addEventListener("click", () => jumpTo(Number(control.dataset.index)));
+        ticks.forEach((tick) => {
+          tick.addEventListener("click", () => setActive(Number(tick.dataset.index)));
+        });
+
+        if (modeBtn) {
+          modeBtn.addEventListener("click", () => {
+            setMode(showcase.dataset.mode === "zoom" ? "detail" : "curve");
+          });
+        }
+
+        viewport.addEventListener(
+          "wheel",
+          (e) => {
+            if (Math.abs(e.deltaX) <= Math.abs(e.deltaY) || Math.abs(e.deltaX) < 18) return;
+            e.preventDefault();
+            if (wheelLock) return;
+            wheelLock = true;
+            setActive(current + (e.deltaX > 0 ? 1 : -1));
+            window.setTimeout(() => {
+              wheelLock = false;
+            }, 360);
+          },
+          { passive: false },
+        );
+
+        viewport.addEventListener("pointerdown", (e) => {
+          dragStartX = e.clientX;
+        });
+        viewport.addEventListener("pointerup", (e) => {
+          if (dragStartX === null) return;
+          const dx = e.clientX - dragStartX;
+          dragStartX = null;
+          if (Math.abs(dx) > 48) setActive(current + (dx < 0 ? 1 : -1));
+        });
+
+        viewport.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowRight") {
+            e.preventDefault();
+            setActive(current + 1);
+          } else if (e.key === "ArrowLeft") {
+            e.preventDefault();
+            setActive(current - 1);
+          } else if (e.key === "Escape" && showcase.dataset.mode !== "curve") {
+            setMode(showcase.dataset.mode === "zoom" ? "detail" : "curve");
+          }
         });
 
         document.documentElement.classList.add("showcase-ready");
-        window.addEventListener("scroll", onScroll, { passive: true });
-        window.addEventListener("resize", onScroll);
-        update();
+        setActive(1);
 
-        // don't keep a video decoding while the section is far off screen
         if ("IntersectionObserver" in window) {
           const stageObserver = new IntersectionObserver(
             (entries) => {
               stageVisible = entries[entries.length - 1].isIntersecting;
               syncVideos();
             },
-            { threshold: 0 },
+            { threshold: 0.15 },
           );
-          stageObserver.observe(stage);
+          stageObserver.observe(viewport);
         }
 
-        // the hero motion toggle also governs this section's video
         if (motionToggle) motionToggle.addEventListener("click", () => requestAnimationFrame(syncVideos));
       }
 
