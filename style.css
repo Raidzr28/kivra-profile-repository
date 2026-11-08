@@ -2661,7 +2661,8 @@ a:focus-visible {
    ============================================================ */
 
 .showcase {
-  --active: 1;
+  --active: 0;
+  --progress: 0;
   --count: 6;
   --card-w: clamp(230px, 27vw, 370px);
   --card-h: clamp(300px, 46vh, 430px);
@@ -2670,8 +2671,14 @@ a:focus-visible {
   position: relative;
   margin-top: 120px;
   padding-block: 44px 52px;
+  scroll-margin-top: 92px;
   color: var(--paper);
   isolation: isolate;
+}
+
+html.showcase-ready .showcase {
+  height: calc(100svh + (var(--count) - 1) * 42svh);
+  padding-block: 0;
 }
 
 .showcase::before {
@@ -2684,9 +2691,23 @@ a:focus-visible {
 
 .showcase-frame {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto minmax(420px, 64vh) auto;
   gap: 20px;
   align-items: center;
+}
+
+html.showcase-ready .showcase-frame {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  box-sizing: border-box;
+  padding-block: calc(92px + clamp(12px, 2vh, 22px)) clamp(16px, 2.5vh, 28px);
+  grid-template-rows: auto minmax(0, 1fr) auto;
+}
+
+html.showcase-ready .showcase-viewport {
+  min-height: 0;
 }
 
 .showcase-head {
@@ -2747,13 +2768,19 @@ a:focus-visible {
 .showcase-viewport {
   position: relative;
   width: 100%;
+  min-width: 0;
   height: 100%;
   min-height: 400px;
   display: flex;
   align-items: center;
-  overflow: hidden;
+  overflow: clip;
   outline: none;
   user-select: none;
+  touch-action: pan-y pinch-zoom;
+}
+
+.showcase[data-mode="detail"] .showcase-viewport {
+  overscroll-behavior: contain;
 }
 
 .showcase-viewport::before,
@@ -2837,6 +2864,12 @@ a:focus-visible {
   --card-w: clamp(195px, 20vw, 276px);
   --card-h: clamp(320px, 48vh, 440px);
   --card-gap: clamp(28px, 5vw, 76px);
+}
+
+.showcase[data-mode="detail"][data-layout="desktop"] {
+  --card-w: clamp(270px, 36vw, 490px);
+  --card-h: clamp(180px, 24vw, 310px);
+  --card-gap: clamp(22px, 3.5vw, 52px);
 }
 
 .showcase[data-mode="zoom"] {
@@ -2925,6 +2958,7 @@ a:focus-visible {
   transition: transform 720ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+.showcase-media.is-desktop img,
 .showcase[data-mode="zoom"] .showcase-card.is-active .showcase-media img {
   object-fit: contain;
   object-position: center;
@@ -2935,6 +2969,31 @@ a:focus-visible {
   .showcase-card:hover .showcase-media video {
     transform: scale(1.04);
   }
+}
+
+.showcase-stack-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 4;
+  padding: 5px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  background: rgba(27, 54, 93, 0.78);
+  backdrop-filter: blur(6px);
+  color: var(--paper);
+  font-family: var(--display);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  pointer-events: none;
+  transition: opacity 280ms ease, transform 280ms ease;
+}
+
+.showcase-card.is-active .showcase-stack-badge {
+  border-color: var(--sky);
+  color: var(--sky);
 }
 
 .showcase-cat {
@@ -2957,7 +3016,7 @@ a:focus-visible {
   pointer-events: none;
 }
 
-.showcase[data-mode="detail"] .showcase-card.is-active .showcase-cat,
+.showcase[data-mode="detail"] .showcase-cat,
 .showcase[data-mode="zoom"] .showcase-card.is-active .showcase-cat {
   opacity: 1;
   transform: translateY(0);
@@ -3019,7 +3078,6 @@ a:focus-visible {
   transition: opacity 360ms ease, transform 360ms ease;
 }
 
-.showcase[data-mode="detail"] .showcase-ticker,
 .showcase[data-mode="zoom"] .showcase-ticker {
   opacity: 0;
   pointer-events: none;
@@ -3055,20 +3113,118 @@ a:focus-visible {
 /* ---- Tablet / Mobile ---- */
 @media (max-width: 900px) {
   .showcase {
-    --card-w: clamp(220px, 68vw, 320px);
-    --card-h: clamp(200px, 34vh, 280px);
-    --card-gap: 14px;
+    --card-w: clamp(190px, 56vw, 260px);
+    --card-h: clamp(290px, 46vh, 380px);
+    --card-gap: 12px;
     margin-top: 72px;
-    padding-block: 32px 36px;
+    padding-block: 28px 34px;
+  }
+
+  .showcase[data-mode="detail"] {
+    --card-w: clamp(180px, 54vw, 240px);
+    --card-h: clamp(300px, 48vh, 390px);
+    --card-gap: 22px;
+  }
+
+  .showcase[data-mode="detail"][data-layout="desktop"] {
+    --card-w: clamp(235px, 74vw, 330px);
+    --card-h: clamp(155px, 48vw, 215px);
+    --card-gap: 16px;
+  }
+
+  .showcase[data-mode="zoom"] {
+    --card-w: clamp(220px, 74vw, 310px);
+    --card-h: clamp(350px, 56vh, 460px);
+    --card-gap: 28px;
   }
 
   .showcase-frame {
-    grid-template-rows: auto minmax(320px, 48vh) auto;
-    gap: 14px;
+    grid-template-rows: auto minmax(350px, 54vh) auto;
+    gap: 12px;
+  }
+
+  html.showcase-ready .showcase {
+    height: calc(100svh + (var(--count) - 1) * 34svh);
+    padding-block: 0;
+  }
+
+  html.showcase-ready .showcase-frame {
+    padding-block: calc(64px + 12px) 20px;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+  }
+
+  .showcase-head {
+    gap: 8px;
+  }
+
+  .showcase-mode-btn {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    padding: 6px 12px;
+    min-height: 36px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 999px;
   }
 
   .showcase-viewport {
-    min-height: 300px;
+    min-height: 350px;
+  }
+
+  .showcase-viewport::before,
+  .showcase-viewport::after {
+    left: -16%;
+    right: -16%;
+    height: clamp(38px, 9vw, 58px);
+  }
+
+  .showcase-viewport::before {
+    top: calc(50% - var(--card-h) / 2 - clamp(18px, 4.5vw, 28px));
+  }
+
+  .showcase-viewport::after {
+    bottom: calc(50% - var(--card-h) / 2 - clamp(18px, 4.5vw, 28px));
+  }
+
+  .showcase-vtitle {
+    font-size: clamp(1.2rem, 5vw, 1.65rem);
+    letter-spacing: 0.12em;
+  }
+
+  .showcase[data-mode="detail"] .showcase-vtitle {
+    font-size: clamp(1.45rem, 6vw, 2rem);
+  }
+
+  .showcase[data-mode="detail"] .showcase-card:nth-child(odd) {
+    transform: translate3d(0, 12px, 0);
+  }
+
+  .showcase[data-mode="detail"] .showcase-card:nth-child(even) {
+    transform: translate3d(0, -10px, 0);
+  }
+
+  .showcase[data-mode="detail"] .showcase-card.is-active {
+    transform: translate3d(0, -6px, 0) scale(1.03);
+  }
+
+  .showcase[data-mode="zoom"] .showcase-card.is-active {
+    transform: scale(1.02);
+  }
+
+  .showcase-card.is-active .showcase-cat {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .showcase-cat {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    padding: 5px 8px;
+    font-size: 10px;
+    gap: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .showcase-side-tag {
@@ -3076,11 +3232,48 @@ a:focus-visible {
   }
 
   .showcase-ticker {
-    gap: 6px 14px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 6px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-inline: 12px;
+    margin-inline: -12px;
+  }
+
+  .showcase-ticker::-webkit-scrollbar {
+    display: none;
+  }
+
+  .showcase-ticker > li {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+  }
+
+  .showcase-tick {
+    padding: 8px 10px;
+    min-height: 40px;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    white-space: nowrap;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html.showcase-ready .showcase {
+    height: auto;
+    padding-block: 44px 52px;
+  }
+
+  html.showcase-ready .showcase-frame {
+    position: relative;
+    height: auto;
+    padding-block: 0;
+    grid-template-rows: auto minmax(420px, 64vh) auto;
+  }
+
   .showcase-track,
   .showcase-card,
   .showcase-card::before,
@@ -4647,6 +4840,11 @@ html.motion-ready [data-reveal="card"].is-revealed {
    agar header aplikasi terbaca alih-alih terpotong di tengah. */
 .brand-portfolio-image.is-portrait img {
   object-position: top center;
+}
+
+.brand-portfolio-image.is-desktop img {
+  object-fit: contain;
+  object-position: center;
 }/* ==========================================================================
    Elemen motion pendukung (motion.js)
    Semua efek di bawah dimatikan pada prefers-reduced-motion, dan setiap
@@ -5446,6 +5644,13 @@ section[id],
   max-height: none;
   padding: 30% 18%;
   object-position: center;
+}
+
+.collab-wall .collab-tile-media img.is-full-bleed,
+.collab-logo img.is-full-bleed {
+  padding: 0;
+  object-fit: cover;
+  object-position: center 14%;
 }/* ---- Judul hero diketik (motion.js initTypewriter) ----
    Huruf memakai tag kustom <tw-char>, bukan <span>, karena aturan warna aksen
    di berkas ini menyasar "h1 span"/"h2 span" dan span pembungkus akan ikut
