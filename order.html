@@ -89,6 +89,22 @@
                   <span class="object-card-meta">Bisa tanpa development</span>
                 </span>
               </label>
+              <label class="object-card">
+                <input type="radio" name="project_type" value="Sistem POS" data-object="pos" />
+                <span class="object-card-body">
+                  <span class="object-card-name">Sistem POS (Point of Sale)</span>
+                  <span class="object-card-desc">Sistem kasir, manajemen stok, meja/pesanan, dan laporan penjualan harian.</span>
+                  <span class="object-card-meta">Siap operasional toko &amp; cabang</span>
+                </span>
+              </label>
+              <label class="object-card">
+                <input type="radio" name="project_type" value="Android App Development" data-object="android" />
+                <span class="object-card-body">
+                  <span class="object-card-name">Android App Development</span>
+                  <span class="object-card-desc">Aplikasi Android untuk pelanggan atau tim internal, siap rilis ke Play Store.</span>
+                  <span class="object-card-meta">Termasuk pendampingan rilis</span>
+                </span>
+              </label>
             </div>
           </fieldset>
 
@@ -155,6 +171,65 @@
                   <option value="" selected>Belum ditentukan</option>
                   <option>Mulai dari nol</option>
                   <option>Perbaikan desain lama</option>
+                </select>
+              </label>
+
+              <label class="order-field" data-for="pos">
+                <span>Jenis usaha</span>
+                <select name="pos_business">
+                  <option value="" selected>Belum ditentukan</option>
+                  <option>F&amp;B / Kafe &amp; Restoran</option>
+                  <option>Retail / Toko &amp; Minimarket</option>
+                  <option>Jasa / Studio / Salon / Klinik</option>
+                  <option>Multi-cabang / Franchise</option>
+                </select>
+              </label>
+              <label class="order-field" data-for="pos">
+                <span>Skala penggunaan</span>
+                <select name="pos_scale">
+                  <option value="" selected>Belum ditentukan</option>
+                  <option>1 titik kasir (1 outlet)</option>
+                  <option>2–5 titik kasir / cabang</option>
+                  <option>Lebih dari 5 cabang</option>
+                </select>
+              </label>
+              <label class="order-field" data-for="pos">
+                <span>Fitur utama POS</span>
+                <select name="pos_features">
+                  <option value="" selected>Belum ditentukan</option>
+                  <option>Kasir, cetak struk &amp; laporan harian</option>
+                  <option>Kasir + manajemen stok &amp; bahan baku</option>
+                  <option>Kasir + booking jadwal / meja + laporan</option>
+                  <option>Custom sesuai alur operasional</option>
+                </select>
+              </label>
+
+              <label class="order-field" data-for="android">
+                <span>Jenis aplikasi Android</span>
+                <select name="android_kind">
+                  <option value="" selected>Belum ditentukan</option>
+                  <option>Aplikasi pelanggan (booking / toko / layanan)</option>
+                  <option>Aplikasi kesehatan / kebugaran / komunitas</option>
+                  <option>Aplikasi operasional internal / tim lapangan</option>
+                  <option>MVP produk digital baru</option>
+                </select>
+              </label>
+              <label class="order-field" data-for="android">
+                <span>Kesiapan desain &amp; sistem</span>
+                <select name="android_readiness">
+                  <option value="" selected>Belum ditentukan</option>
+                  <option>Mulai dari nol (UI/UX + aplikasi + backend)</option>
+                  <option>Desain UI/UX sudah ada</option>
+                  <option>Backend / API sudah tersedia</option>
+                </select>
+              </label>
+              <label class="order-field" data-for="android">
+                <span>Target rilis</span>
+                <select name="android_release">
+                  <option value="" selected>Belum ditentukan</option>
+                  <option>Publik di Google Play Store</option>
+                  <option>Internal perusahaan (APK / Play Console Internal)</option>
+                  <option>Keduanya</option>
                 </select>
               </label>
 
